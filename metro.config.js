@@ -6,6 +6,7 @@
  */
 
 module.exports = {
+  
   transformer: {
     getTransformOptions: async () => ({
       transform: {
@@ -13,5 +14,9 @@ module.exports = {
         inlineRequires: true,
       },
     }),
+  },
+  resolver: {
+    /* resolver options */
+    sourceExts: ['js', 'json', 'ts', 'tsx', 'jsx']
   },
 };

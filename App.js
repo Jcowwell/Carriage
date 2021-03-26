@@ -25,7 +25,7 @@ import {
   Colors,
 } from 'react-native/Libraries/NewAppScreen';
 
-import {HomeScreen, CouponScreen, CategoryScreen, SearchScreen, SettingScreen} from './src/scenes/index'
+import {LoginScreen, HomeScreen, CouponScreen, CategoryScreen, SearchScreen, SettingScreen} from './src/scenes/index'
 
 let deviceHeight = Dimensions.get('window').height;
 let deviceWidth = Dimensions.get('window').width;
