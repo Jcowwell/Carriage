@@ -1340,14 +1340,16 @@ var __BUNDLE_START_TIME__=this.nativePerformanceNow?nativePerformanceNow():Date.
   })();
 })(typeof globalThis !== 'undefined' ? globalThis : typeof global !== 'undefined' ? global : typeof window !== 'undefined' ? window : this);
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
-  var _reactNative = _$$_REQUIRE(_dependencyMap[0], "react-native");
+  _$$_REQUIRE(_dependencyMap[0], "react-native-gesture-handler");
 
-  var _App = _$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "./App"));
+  var _reactNative = _$$_REQUIRE(_dependencyMap[1], "react-native");
 
-  _reactNative.AppRegistry.registerComponent(_$$_REQUIRE(_dependencyMap[3], "./app.json").name, function () {
+  var _App = _$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "./App"));
+
+  _reactNative.AppRegistry.registerComponent(_$$_REQUIRE(_dependencyMap[4], "./app.json").name, function () {
     return _App.default;
   });
-},0,[1,3,494,504],"index.js");
+},0,[509,1,3,494,504],"index.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -100050,9 +100052,13 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   });
   exports.default = void 0;
 
-  var _react = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "react"));
+  var _extends2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/extends"));
 
-  var _reactNative = _$$_REQUIRE(_dependencyMap[2], "react-native");
+  var _objectWithoutProperties2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/objectWithoutProperties"));
+
+  var _react = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "react"));
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[4], "react-native");
 
   var _this = this,
       _jsxFileName = "/Users/jevon/Documents/Carriage/App.js",
@@ -100062,10 +100068,6 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var deviceHeight = _reactNative.Dimensions.get('window').height;
 
   var deviceWidth = _reactNative.Dimensions.get('window').width;
-
-  var state = {
-    myState: 'A'
-  };
 
   var Section = function Section(_ref) {
     _s();
@@ -100078,27 +100080,27 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 40,
+        lineNumber: 34,
         columnNumber: 5
       }
     }, _react.default.createElement(_reactNative.Text, {
       style: [styles.sectionTitle, {
-        color: isDarkMode ? _$$_REQUIRE(_dependencyMap[3], "react-native/Libraries/NewAppScreen").Colors.white : _$$_REQUIRE(_dependencyMap[3], "react-native/Libraries/NewAppScreen").Colors.black
+        color: isDarkMode ? _$$_REQUIRE(_dependencyMap[5], "react-native/Libraries/NewAppScreen").Colors.white : _$$_REQUIRE(_dependencyMap[5], "react-native/Libraries/NewAppScreen").Colors.black
       }],
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 41,
+        lineNumber: 35,
         columnNumber: 7
       }
     }, title), _react.default.createElement(_reactNative.Text, {
       style: [styles.sectionDescription, {
-        color: isDarkMode ? _$$_REQUIRE(_dependencyMap[3], "react-native/Libraries/NewAppScreen").Colors.light : _$$_REQUIRE(_dependencyMap[3], "react-native/Libraries/NewAppScreen").Colors.dark
+        color: isDarkMode ? _$$_REQUIRE(_dependencyMap[5], "react-native/Libraries/NewAppScreen").Colors.light : _$$_REQUIRE(_dependencyMap[5], "react-native/Libraries/NewAppScreen").Colors.dark
       }],
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 50,
+        lineNumber: 44,
         columnNumber: 7
       }
     }, children));
@@ -100110,227 +100112,105 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
 
   _c = Section;
 
-  var Navbar = function Navbar() {
+  var Topbar = function Topbar() {
     return _react.default.createElement(_reactNative.View, {
+      style: styles.topbarContainer,
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 64,
-        columnNumber: 5
+        lineNumber: 59,
+        columnNumber: 7
       }
-    }, _react.default.createElement(_reactNative.View, {
-      styles: styles.navbarContainer,
+    });
+  };
+
+  _c2 = Topbar;
+
+  var MyStatusBar = function MyStatusBar(_ref2) {
+    var backgroundColor = _ref2.backgroundColor,
+        props = (0, _objectWithoutProperties2.default)(_ref2, ["backgroundColor"]);
+    return _react.default.createElement(_reactNative.View, {
+      style: [styles.statusBar, {
+        backgroundColor: backgroundColor
+      }],
       __self: _this,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 65,
-        columnNumber: 7
+        columnNumber: 3
       }
-    }));
-  };
-
-  _c2 = Navbar;
-
-  var Tabbar = function Tabbar() {
-    return _react.default.createElement(_reactNative.View, {
-      style: styles.tabbarContainer,
+    }, _react.default.createElement(_reactNative.SafeAreaView, {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 73,
+        lineNumber: 66,
         columnNumber: 5
       }
-    }, _react.default.createElement(TouchableHighlight, {
-      style: styles.tabButton,
+    }, _react.default.createElement(_reactNative.StatusBar, (0, _extends2.default)({
+      translucent: true,
+      backgroundColor: backgroundColor
+    }, props, {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 74,
+        lineNumber: 67,
         columnNumber: 7
       }
-    }, _react.default.createElement(_reactNative.Text, {
-      __self: _this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 77,
-        columnNumber: 9
-      }
-    }, "Home")), _react.default.createElement(TouchableHighlight, {
-      style: styles.tabButton,
-      __self: _this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 82,
-        columnNumber: 7
-      }
-    }, _react.default.createElement(_reactNative.Text, {
-      __self: _this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 85,
-        columnNumber: 9
-      }
-    }, "Coupons")), _react.default.createElement(TouchableHighlight, {
-      style: styles.tabButton,
-      __self: _this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 90,
-        columnNumber: 7
-      }
-    }, _react.default.createElement(_reactNative.Text, {
-      __self: _this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 93,
-        columnNumber: 9
-      }
-    }, "Categories")), _react.default.createElement(TouchableHighlight, {
-      style: styles.tabButton,
-      __self: _this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 98,
-        columnNumber: 7
-      }
-    }, _react.default.createElement(_reactNative.Text, {
-      __self: _this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 101,
-        columnNumber: 9
-      }
-    }, "Search")), _react.default.createElement(TouchableHighlight, {
-      style: styles.tabButton,
-      __self: _this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 106,
-        columnNumber: 7
-      }
-    }, _react.default.createElement(_reactNative.Text, {
-      __self: _this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 109,
-        columnNumber: 9
-      }
-    }, "Settings")));
+    }))));
   };
 
-  _c3 = Tabbar;
+  _c3 = MyStatusBar;
+
+  var _handleButtonPress = function _handleButtonPress() {
+    alert('Button pressed!', 'You did it!');
+  };
 
   var App = function App() {
     _s2();
 
     var isDarkMode = (0, _reactNative.useColorScheme)() === 'light';
     var backgroundStyle = {
-      backgroundColor: _$$_REQUIRE(_dependencyMap[3], "react-native/Libraries/NewAppScreen").Colors.light
+      backgroundColor: 'white'
     };
-    return _react.default.createElement(_reactNative.SafeAreaView, {
+    return _react.default.createElement(_reactNative.View, {
       style: backgroundStyle,
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 125,
+        lineNumber: 88,
         columnNumber: 5
       }
-    }, _react.default.createElement(_reactNative.StatusBar, {
-      barStyle: 'dark-content',
+    }, _react.default.createElement(MyStatusBar, {
+      backgroundColor: "#32965D",
+      barStyle: "dark-content",
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 126,
+        lineNumber: 90,
         columnNumber: 7
       }
-    }), _react.default.createElement(_reactNative.ScrollView, {
-      contentInsetAdjustmentBehavior: "automatic",
-      style: backgroundStyle,
+    }), _react.default.createElement(Topbar, {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 127,
+        lineNumber: 92,
         columnNumber: 7
-      }
-    }, _react.default.createElement(_$$_REQUIRE(_dependencyMap[3], "react-native/Libraries/NewAppScreen").Header, {
-      __self: _this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 130,
-        columnNumber: 9
       }
     }), _react.default.createElement(_reactNative.View, {
-      style: {
-        backgroundColor: _$$_REQUIRE(_dependencyMap[3], "react-native/Libraries/NewAppScreen").Colors.black
-      },
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 131,
+        lineNumber: 94,
+        columnNumber: 7
+      }
+    }, _react.default.createElement(_$$_REQUIRE(_dependencyMap[6], "./src/scenes/home/home").HomeScreen, {
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 95,
         columnNumber: 9
       }
-    }, _react.default.createElement(Section, {
-      title: "Step One",
-      __self: _this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 135,
-        columnNumber: 11
-      }
-    }, "Edit ", _react.default.createElement(_reactNative.Text, {
-      style: styles.highlight,
-      __self: _this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 136,
-        columnNumber: 18
-      }
-    }, "App.js"), " to change this screen sdfdsfds and then come back to see your edit."), _react.default.createElement(Section, {
-      title: "See Your Changes",
-      __self: _this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 139,
-        columnNumber: 11
-      }
-    }, _react.default.createElement(_$$_REQUIRE(_dependencyMap[3], "react-native/Libraries/NewAppScreen").ReloadInstructions, {
-      __self: _this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 140,
-        columnNumber: 13
-      }
-    })), _react.default.createElement(Section, {
-      title: "Debug",
-      __self: _this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 142,
-        columnNumber: 11
-      }
-    }, _react.default.createElement(_$$_REQUIRE(_dependencyMap[3], "react-native/Libraries/NewAppScreen").DebugInstructions, {
-      __self: _this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 143,
-        columnNumber: 13
-      }
-    })), _react.default.createElement(Section, {
-      title: "Learn More",
-      __self: _this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 145,
-        columnNumber: 11
-      }
-    }, "Read the docs to discover what to do next:"), _react.default.createElement(_$$_REQUIRE(_dependencyMap[3], "react-native/Libraries/NewAppScreen").LearnMoreLinks, {
-      __self: _this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 148,
-        columnNumber: 11
-      }
-    }))));
+    })));
   };
 
   _s2(App, "80O3njxBFw4h1hVYP8ir0bbuAMA=", false, function () {
@@ -100340,30 +100220,29 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   _c4 = App;
 
   var styles = _reactNative.StyleSheet.create({
-    sectionContainer: {
-      marginTop: 32,
-      paddingHorizontal: 24
+    topbarContainer: {
+      height: deviceHeight / 8,
+      width: deviceWidth,
+      backgroundColor: '#32965D',
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      borderBottomWidth: 0.5,
+      borderColor: 'white'
     },
-    sectionTitle: {
-      fontSize: 24,
-      fontWeight: '600'
-    },
-    sectionDescription: {
-      marginTop: 8,
-      fontSize: 18,
-      fontWeight: '400'
-    },
-    highlight: {
-      fontWeight: '700'
+    contentContainer: {
+      height: 5.555 * (deviceHeight / 8),
+      width: deviceWidth
     },
     tabbarContainer: {
-      height: deviceHeight / 6,
+      height: deviceHeight / 8,
       width: deviceWidth,
+      backgroundColor: '#32965D',
       flexDirection: 'row',
-      justifyContent: 'center',
+      justifyContent: 'space-between',
       alignItems: 'center',
-      borderTopWidth: 5,
-      borderColor: 'black'
+      borderTopWidth: 1,
+      borderColor: 'white'
     }
   });
 
@@ -100373,10 +100252,10 @@ __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, e
   var _c, _c2, _c3, _c4;
 
   $RefreshReg$(_c, "Section");
-  $RefreshReg$(_c2, "Navbar");
-  $RefreshReg$(_c3, "Tabbar");
+  $RefreshReg$(_c2, "Topbar");
+  $RefreshReg$(_c3, "MyStatusBar");
   $RefreshReg$(_c4, "App");
-},494,[3,45,1,495],"App.js");
+},494,[3,31,137,45,1,495,508],"App.js");
 __d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
   'use strict';
 
@@ -100911,6 +100790,3465 @@ __d(function(global, require, _importDefaultUnused, _importAllUnused, module, ex
   "displayName": "Carriage"
 };
 },504,[],"app.json");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.HomeScreen = void 0;
+
+  var _classCallCheck2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/classCallCheck"));
+
+  var _createClass2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/createClass"));
+
+  var _inherits2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/inherits"));
+
+  var _possibleConstructorReturn2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/possibleConstructorReturn"));
+
+  var _getPrototypeOf2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/getPrototypeOf"));
+
+  var _react = _$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/interopRequireWildcard")(_$$_REQUIRE(_dependencyMap[7], "react"));
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[8], "react-native");
+
+  var _jsxFileName = "/Users/jevon/Documents/Carriage/src/scenes/home/home.js";
+
+  function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2.default)(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2.default)(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2.default)(this, result); }; }
+
+  function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+  var HomeScreen = function (_Component) {
+    (0, _inherits2.default)(HomeScreen, _Component);
+
+    var _super = _createSuper(HomeScreen);
+
+    function HomeScreen() {
+      (0, _classCallCheck2.default)(this, HomeScreen);
+      return _super.apply(this, arguments);
+    }
+
+    (0, _createClass2.default)(HomeScreen, [{
+      key: "render",
+      value: function render() {
+        return _react.default.createElement(_reactNative.View, {
+          syles: styles.container,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 8,
+            columnNumber: 9
+          }
+        }, _react.default.createElement(_reactNative.Text, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 9,
+            columnNumber: 13
+          }
+        }, "Home"));
+      }
+    }]);
+    return HomeScreen;
+  }(_react.Component);
+
+  exports.HomeScreen = HomeScreen;
+
+  var styles = _reactNative.StyleSheet.create({
+    container: {
+      height: 500,
+      width: 414,
+      backgroundColor: '#32965D',
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      borderBottomWidth: 0.5,
+      borderColor: 'white'
+    }
+  });
+},508,[3,5,6,10,12,9,22,45,1],"src/scenes/home/home.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(exports, "Directions", {
+    enumerable: true,
+    get: function get() {
+      return _$$_REQUIRE(_dependencyMap[0], "./Directions").Directions;
+    }
+  });
+  Object.defineProperty(exports, "State", {
+    enumerable: true,
+    get: function get() {
+      return _$$_REQUIRE(_dependencyMap[1], "./State").State;
+    }
+  });
+  Object.defineProperty(exports, "gestureHandlerRootHOC", {
+    enumerable: true,
+    get: function get() {
+      return _gestureHandlerRootHOC.default;
+    }
+  });
+  Object.defineProperty(exports, "GestureHandlerRootView", {
+    enumerable: true,
+    get: function get() {
+      return _GestureHandlerRootView.default;
+    }
+  });
+  Object.defineProperty(exports, "TapGestureHandler", {
+    enumerable: true,
+    get: function get() {
+      return _$$_REQUIRE(_dependencyMap[2], "./handlers/gestureHandlers").TapGestureHandler;
+    }
+  });
+  Object.defineProperty(exports, "ForceTouchGestureHandler", {
+    enumerable: true,
+    get: function get() {
+      return _$$_REQUIRE(_dependencyMap[2], "./handlers/gestureHandlers").ForceTouchGestureHandler;
+    }
+  });
+  Object.defineProperty(exports, "LongPressGestureHandler", {
+    enumerable: true,
+    get: function get() {
+      return _$$_REQUIRE(_dependencyMap[2], "./handlers/gestureHandlers").LongPressGestureHandler;
+    }
+  });
+  Object.defineProperty(exports, "PanGestureHandler", {
+    enumerable: true,
+    get: function get() {
+      return _$$_REQUIRE(_dependencyMap[2], "./handlers/gestureHandlers").PanGestureHandler;
+    }
+  });
+  Object.defineProperty(exports, "PinchGestureHandler", {
+    enumerable: true,
+    get: function get() {
+      return _$$_REQUIRE(_dependencyMap[2], "./handlers/gestureHandlers").PinchGestureHandler;
+    }
+  });
+  Object.defineProperty(exports, "RotationGestureHandler", {
+    enumerable: true,
+    get: function get() {
+      return _$$_REQUIRE(_dependencyMap[2], "./handlers/gestureHandlers").RotationGestureHandler;
+    }
+  });
+  Object.defineProperty(exports, "FlingGestureHandler", {
+    enumerable: true,
+    get: function get() {
+      return _$$_REQUIRE(_dependencyMap[2], "./handlers/gestureHandlers").FlingGestureHandler;
+    }
+  });
+  Object.defineProperty(exports, "createNativeWrapper", {
+    enumerable: true,
+    get: function get() {
+      return _createNativeWrapper.default;
+    }
+  });
+  Object.defineProperty(exports, "NativeViewGestureHandler", {
+    enumerable: true,
+    get: function get() {
+      return _$$_REQUIRE(_dependencyMap[3], "./handlers/NativeViewGestureHandler").NativeViewGestureHandler;
+    }
+  });
+  Object.defineProperty(exports, "RawButton", {
+    enumerable: true,
+    get: function get() {
+      return _$$_REQUIRE(_dependencyMap[4], "./components/GestureButtons").RawButton;
+    }
+  });
+  Object.defineProperty(exports, "BaseButton", {
+    enumerable: true,
+    get: function get() {
+      return _$$_REQUIRE(_dependencyMap[4], "./components/GestureButtons").BaseButton;
+    }
+  });
+  Object.defineProperty(exports, "RectButton", {
+    enumerable: true,
+    get: function get() {
+      return _$$_REQUIRE(_dependencyMap[4], "./components/GestureButtons").RectButton;
+    }
+  });
+  Object.defineProperty(exports, "BorderlessButton", {
+    enumerable: true,
+    get: function get() {
+      return _$$_REQUIRE(_dependencyMap[4], "./components/GestureButtons").BorderlessButton;
+    }
+  });
+  Object.defineProperty(exports, "TouchableHighlight", {
+    enumerable: true,
+    get: function get() {
+      return _$$_REQUIRE(_dependencyMap[5], "./components/touchables").TouchableHighlight;
+    }
+  });
+  Object.defineProperty(exports, "TouchableNativeFeedback", {
+    enumerable: true,
+    get: function get() {
+      return _$$_REQUIRE(_dependencyMap[5], "./components/touchables").TouchableNativeFeedback;
+    }
+  });
+  Object.defineProperty(exports, "TouchableOpacity", {
+    enumerable: true,
+    get: function get() {
+      return _$$_REQUIRE(_dependencyMap[5], "./components/touchables").TouchableOpacity;
+    }
+  });
+  Object.defineProperty(exports, "TouchableWithoutFeedback", {
+    enumerable: true,
+    get: function get() {
+      return _$$_REQUIRE(_dependencyMap[5], "./components/touchables").TouchableWithoutFeedback;
+    }
+  });
+  Object.defineProperty(exports, "ScrollView", {
+    enumerable: true,
+    get: function get() {
+      return _$$_REQUIRE(_dependencyMap[6], "./components/GestureComponents").ScrollView;
+    }
+  });
+  Object.defineProperty(exports, "Switch", {
+    enumerable: true,
+    get: function get() {
+      return _$$_REQUIRE(_dependencyMap[6], "./components/GestureComponents").Switch;
+    }
+  });
+  Object.defineProperty(exports, "TextInput", {
+    enumerable: true,
+    get: function get() {
+      return _$$_REQUIRE(_dependencyMap[6], "./components/GestureComponents").TextInput;
+    }
+  });
+  Object.defineProperty(exports, "DrawerLayoutAndroid", {
+    enumerable: true,
+    get: function get() {
+      return _$$_REQUIRE(_dependencyMap[6], "./components/GestureComponents").DrawerLayoutAndroid;
+    }
+  });
+  Object.defineProperty(exports, "FlatList", {
+    enumerable: true,
+    get: function get() {
+      return _$$_REQUIRE(_dependencyMap[6], "./components/GestureComponents").FlatList;
+    }
+  });
+  Object.defineProperty(exports, "Swipeable", {
+    enumerable: true,
+    get: function get() {
+      return _Swipeable.default;
+    }
+  });
+  Object.defineProperty(exports, "DrawerLayout", {
+    enumerable: true,
+    get: function get() {
+      return _DrawerLayout.default;
+    }
+  });
+
+  var _gestureHandlerRootHOC = _$$_REQUIRE(_dependencyMap[7], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[8], "./gestureHandlerRootHOC"));
+
+  var _GestureHandlerRootView = _$$_REQUIRE(_dependencyMap[7], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[9], "./GestureHandlerRootView"));
+
+  var _createNativeWrapper = _$$_REQUIRE(_dependencyMap[7], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[10], "./handlers/createNativeWrapper"));
+
+  var _Swipeable = _$$_REQUIRE(_dependencyMap[7], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[11], "./components/Swipeable"));
+
+  var _DrawerLayout = _$$_REQUIRE(_dependencyMap[7], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[12], "./components/DrawerLayout"));
+},509,[510,511,512,513,514,515,516,3,517,518,519,520,521],"node_modules/react-native-gesture-handler/src/index.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.Directions = void 0;
+  var Directions = {
+    RIGHT: 1,
+    LEFT: 2,
+    UP: 4,
+    DOWN: 8
+  };
+  exports.Directions = Directions;
+},510,[],"node_modules/react-native-gesture-handler/src/Directions.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.State = void 0;
+  var State = {
+    UNDETERMINED: 0,
+    FAILED: 1,
+    BEGAN: 2,
+    CANCELLED: 3,
+    ACTIVE: 4,
+    END: 5
+  };
+  exports.State = State;
+},511,[],"node_modules/react-native-gesture-handler/src/State.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.RotationGestureHandler = exports.PinchGestureHandler = exports.PanGestureHandler = exports.LongPressGestureHandler = exports.ForceTouchGestureHandler = exports.FlingGestureHandler = exports.TapGestureHandler = exports.baseProps = void 0;
+
+  var _extends2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/extends"));
+
+  var _classCallCheck2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/classCallCheck"));
+
+  var _createClass2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/createClass"));
+
+  var _inherits2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/inherits"));
+
+  var _possibleConstructorReturn2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/possibleConstructorReturn"));
+
+  var _getPrototypeOf2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/getPrototypeOf"));
+
+  var React = _$$_REQUIRE(_dependencyMap[7], "@babel/runtime/helpers/interopRequireWildcard")(_$$_REQUIRE(_dependencyMap[8], "react"));
+
+  var _createHandler = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[9], "./createHandler"));
+
+  var _PlatformConstants = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[10], "../PlatformConstants"));
+
+  function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2.default)(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2.default)(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2.default)(this, result); }; }
+
+  function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+  var baseProps = ['id', 'enabled', 'minPointers', 'waitFor', 'simultaneousHandlers', 'shouldCancelWhenOutside', 'hitSlop', 'onBegan', 'onFailed', 'onCancelled', 'onActivated', 'onEnded', 'onGestureEvent', 'onHandlerStateChange'];
+  exports.baseProps = baseProps;
+  var TapGestureHandler = (0, _createHandler.default)({
+    name: 'TapGestureHandler',
+    allowedProps: [].concat(baseProps, ['maxDurationMs', 'maxDelayMs', 'numberOfTaps', 'maxDeltaX', 'maxDeltaY', 'maxDist', 'minPointers']),
+    config: {}
+  });
+  exports.TapGestureHandler = TapGestureHandler;
+  var FlingGestureHandler = (0, _createHandler.default)({
+    name: 'FlingGestureHandler',
+    allowedProps: [].concat(baseProps, ['numberOfPointers', 'direction']),
+    config: {}
+  });
+  exports.FlingGestureHandler = FlingGestureHandler;
+
+  var ForceTouchFallback = function (_React$Component) {
+    (0, _inherits2.default)(ForceTouchFallback, _React$Component);
+
+    var _super = _createSuper(ForceTouchFallback);
+
+    function ForceTouchFallback() {
+      (0, _classCallCheck2.default)(this, ForceTouchFallback);
+      return _super.apply(this, arguments);
+    }
+
+    (0, _createClass2.default)(ForceTouchFallback, [{
+      key: "componentDidMount",
+      value: function componentDidMount() {
+        console.warn('ForceTouchGestureHandler is not available on this platform. Please use ForceTouchGestureHandler.forceTouchAvailable to conditionally render other components that would provide a fallback behavior specific to your usecase');
+      }
+    }, {
+      key: "render",
+      value: function render() {
+        return this.props.children;
+      }
+    }]);
+    return ForceTouchFallback;
+  }(React.Component);
+
+  ForceTouchFallback.forceTouchAvailable = false;
+  var ForceTouchGestureHandler = _PlatformConstants.default != null && _PlatformConstants.default.forceTouchAvailable ? (0, _createHandler.default)({
+    name: 'ForceTouchGestureHandler',
+    allowedProps: [].concat(baseProps, ['minForce', 'maxForce', 'feedbackOnActivation']),
+    config: {}
+  }) : ForceTouchFallback;
+  exports.ForceTouchGestureHandler = ForceTouchGestureHandler;
+  ForceTouchGestureHandler.forceTouchAvailable = (_PlatformConstants.default == null ? void 0 : _PlatformConstants.default.forceTouchAvailable) || false;
+  var LongPressGestureHandler = (0, _createHandler.default)({
+    name: 'LongPressGestureHandler',
+    allowedProps: [].concat(baseProps, ['minDurationMs', 'maxDist']),
+    config: {}
+  });
+  exports.LongPressGestureHandler = LongPressGestureHandler;
+
+  function validatePanGestureHandlerProps(props) {
+    if (props.minDeltaX && props.activeOffsetX) {
+      throw new Error("It's not supported use minDeltaX with activeOffsetXStart or activeOffsetXEnd");
+    }
+
+    if (props.maxDeltaX && props.failOffsetX) {
+      throw new Error("It's not supported use minDeltaX with activeOffsetXStart or activeOffsetXEnd");
+    }
+
+    if (props.minDeltaY && props.activeOffsetY) {
+      throw new Error("It's not supported use minDeltaX with activeOffsetYStart or activeOffsetYEnd");
+    }
+
+    if (props.maxDeltaY && props.failOffsetY) {
+      throw new Error("It's not supported use minDeltaX with activeOffsetYStart or activeOffsetYEnd");
+    }
+
+    if (Array.isArray(props.activeOffsetX) && (props.activeOffsetX[0] > 0 || props.activeOffsetX[1] < 0)) {
+      throw new Error("First element of activeOffsetX should be negative, a the second one should be positive");
+    }
+
+    if (Array.isArray(props.activeOffsetY) && (props.activeOffsetY[0] > 0 || props.activeOffsetY[1] < 0)) {
+      throw new Error("First element of activeOffsetY should be negative, a the second one should be positive");
+    }
+
+    if (Array.isArray(props.failOffsetX) && (props.failOffsetX[0] > 0 || props.failOffsetX[1] < 0)) {
+      throw new Error("First element of failOffsetX should be negative, a the second one should be positive");
+    }
+
+    if (Array.isArray(props.failOffsetY) && (props.failOffsetY[0] > 0 || props.failOffsetY[1] < 0)) {
+      throw new Error("First element of failOffsetY should be negative, a the second one should be positive");
+    }
+  }
+
+  function transformPanGestureHandlerProps(props) {
+    var res = (0, _extends2.default)({}, props);
+
+    if (props.minDeltaX !== undefined) {
+      delete res.minDeltaX;
+      res.activeOffsetXStart = -props.minDeltaX;
+      res.activeOffsetXEnd = props.minDeltaX;
+    }
+
+    if (props.maxDeltaX !== undefined) {
+      delete res.maxDeltaX;
+      res.failOffsetXStart = -props.maxDeltaX;
+      res.failOffsetXEnd = props.maxDeltaX;
+    }
+
+    if (props.minOffsetX !== undefined) {
+      delete res.minOffsetX;
+
+      if (props.minOffsetX < 0) {
+        res.activeOffsetXStart = props.minOffsetX;
+      } else {
+        res.activeOffsetXEnd = props.minOffsetX;
+      }
+    }
+
+    if (props.minDeltaY !== undefined) {
+      delete res.minDeltaY;
+      res.activeOffsetYStart = -props.minDeltaY;
+      res.activeOffsetYEnd = props.minDeltaY;
+    }
+
+    if (props.maxDeltaY !== undefined) {
+      delete res.maxDeltaY;
+      res.failOffsetYStart = -props.maxDeltaY;
+      res.failOffsetYEnd = props.maxDeltaY;
+    }
+
+    if (props.minOffsetY !== undefined) {
+      delete res.minOffsetY;
+
+      if (props.minOffsetY < 0) {
+        res.activeOffsetYStart = props.minOffsetY;
+      } else {
+        res.activeOffsetYEnd = props.minOffsetY;
+      }
+    }
+
+    if (props.activeOffsetX !== undefined) {
+      delete res.activeOffsetX;
+
+      if (Array.isArray(props.activeOffsetX)) {
+        res.activeOffsetXStart = props.activeOffsetX[0];
+        res.activeOffsetXEnd = props.activeOffsetX[1];
+      } else if (props.activeOffsetX < 0) {
+        res.activeOffsetXStart = props.activeOffsetX;
+      } else {
+        res.activeOffsetXEnd = props.activeOffsetX;
+      }
+    }
+
+    if (props.activeOffsetY !== undefined) {
+      delete res.activeOffsetY;
+
+      if (Array.isArray(props.activeOffsetY)) {
+        res.activeOffsetYStart = props.activeOffsetY[0];
+        res.activeOffsetYEnd = props.activeOffsetY[1];
+      } else if (props.activeOffsetY < 0) {
+        res.activeOffsetYStart = props.activeOffsetY;
+      } else {
+        res.activeOffsetYEnd = props.activeOffsetY;
+      }
+    }
+
+    if (props.failOffsetX !== undefined) {
+      delete res.failOffsetX;
+
+      if (Array.isArray(props.failOffsetX)) {
+        res.failOffsetXStart = props.failOffsetX[0];
+        res.failOffsetXEnd = props.failOffsetX[1];
+      } else if (props.failOffsetX < 0) {
+        res.failOffsetXStart = props.failOffsetX;
+      } else {
+        res.failOffsetXEnd = props.failOffsetX;
+      }
+    }
+
+    if (props.failOffsetY !== undefined) {
+      delete res.failOffsetY;
+
+      if (Array.isArray(props.failOffsetY)) {
+        res.failOffsetYStart = props.failOffsetY[0];
+        res.failOffsetYEnd = props.failOffsetY[1];
+      } else if (props.failOffsetY < 0) {
+        res.failOffsetYStart = props.failOffsetY;
+      } else {
+        res.failOffsetYEnd = props.failOffsetY;
+      }
+    }
+
+    return res;
+  }
+
+  function managePanProps(props) {
+    if (__DEV__) {
+      validatePanGestureHandlerProps(props);
+    }
+
+    return transformPanGestureHandlerProps(props);
+  }
+
+  var PanGestureHandler = (0, _createHandler.default)({
+    name: 'PanGestureHandler',
+    allowedProps: [].concat(baseProps, ['activeOffsetY', 'activeOffsetX', 'failOffsetY', 'failOffsetX', 'minDist', 'minVelocity', 'minVelocityX', 'minVelocityY', 'minPointers', 'maxPointers', 'avgTouches', 'enableTrackpadTwoFingerGesture']),
+    config: {},
+    transformProps: managePanProps,
+    customNativeProps: ['activeOffsetYStart', 'activeOffsetYEnd', 'activeOffsetXStart', 'activeOffsetXEnd', 'failOffsetYStart', 'failOffsetYEnd', 'failOffsetXStart', 'failOffsetXEnd']
+  });
+  exports.PanGestureHandler = PanGestureHandler;
+  var PinchGestureHandler = (0, _createHandler.default)({
+    name: 'PinchGestureHandler',
+    allowedProps: baseProps,
+    config: {}
+  });
+  exports.PinchGestureHandler = PinchGestureHandler;
+  var RotationGestureHandler = (0, _createHandler.default)({
+    name: 'RotationGestureHandler',
+    allowedProps: baseProps,
+    config: {}
+  });
+  exports.RotationGestureHandler = RotationGestureHandler;
+},512,[3,31,5,6,10,12,9,22,45,522,527],"node_modules/react-native-gesture-handler/src/handlers/gestureHandlers.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.NativeViewGestureHandler = exports.nativeViewProps = void 0;
+
+  var _toConsumableArray2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/toConsumableArray"));
+
+  var _createHandler = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "./createHandler"));
+
+  var nativeViewProps = [].concat((0, _toConsumableArray2.default)(_$$_REQUIRE(_dependencyMap[3], "./gestureHandlers").baseProps), ['shouldActivateOnStart', 'disallowInterruption']);
+  exports.nativeViewProps = nativeViewProps;
+  var NativeViewGestureHandler = (0, _createHandler.default)({
+    name: 'NativeViewGestureHandler',
+    allowedProps: nativeViewProps,
+    config: {}
+  });
+  exports.NativeViewGestureHandler = NativeViewGestureHandler;
+},513,[3,39,522,512],"node_modules/react-native-gesture-handler/src/handlers/NativeViewGestureHandler.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(exports, "PureNativeButton", {
+    enumerable: true,
+    get: function get() {
+      return _GestureHandlerButton.default;
+    }
+  });
+  exports.BorderlessButton = exports.RectButton = exports.BaseButton = exports.RawButton = void 0;
+
+  var _extends2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/extends"));
+
+  var _objectWithoutProperties2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/objectWithoutProperties"));
+
+  var _classCallCheck2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/classCallCheck"));
+
+  var _createClass2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/createClass"));
+
+  var _inherits2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/inherits"));
+
+  var _possibleConstructorReturn2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/possibleConstructorReturn"));
+
+  var _getPrototypeOf2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[7], "@babel/runtime/helpers/getPrototypeOf"));
+
+  var React = _$$_REQUIRE(_dependencyMap[8], "@babel/runtime/helpers/interopRequireWildcard")(_$$_REQUIRE(_dependencyMap[9], "react"));
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[10], "react-native");
+
+  var _createNativeWrapper = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[11], "../handlers/createNativeWrapper"));
+
+  var _GestureHandlerButton = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[12], "./GestureHandlerButton"));
+
+  var _jsxFileName = "/Users/jevon/Documents/Carriage/node_modules/react-native-gesture-handler/src/components/GestureButtons.tsx";
+
+  function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2.default)(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2.default)(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2.default)(this, result); }; }
+
+  function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+  var RawButton = (0, _createNativeWrapper.default)(_GestureHandlerButton.default, {
+    shouldCancelWhenOutside: false,
+    shouldActivateOnStart: false
+  });
+  exports.RawButton = RawButton;
+
+  var BaseButton = function (_React$Component) {
+    (0, _inherits2.default)(BaseButton, _React$Component);
+
+    var _super = _createSuper(BaseButton);
+
+    function BaseButton(props) {
+      var _this;
+
+      (0, _classCallCheck2.default)(this, BaseButton);
+      _this = _super.call(this, props);
+
+      _this.handleEvent = function (_ref) {
+        var nativeEvent = _ref.nativeEvent;
+        var state = nativeEvent.state,
+            oldState = nativeEvent.oldState,
+            pointerInside = nativeEvent.pointerInside;
+
+        var active = pointerInside && state === _$$_REQUIRE(_dependencyMap[13], "../State").State.ACTIVE;
+
+        if (active !== _this.lastActive && _this.props.onActiveStateChange) {
+          _this.props.onActiveStateChange(active);
+        }
+
+        if (oldState === _$$_REQUIRE(_dependencyMap[13], "../State").State.ACTIVE && state !== _$$_REQUIRE(_dependencyMap[13], "../State").State.CANCELLED && _this.lastActive && _this.props.onPress) {
+          _this.props.onPress(active);
+        }
+
+        _this.lastActive = active;
+      };
+
+      _this.onHandlerStateChange = function (e) {
+        _this.props.onHandlerStateChange == null ? void 0 : _this.props.onHandlerStateChange(e);
+
+        _this.handleEvent(e);
+      };
+
+      _this.onGestureEvent = function (e) {
+        _this.props.onGestureEvent == null ? void 0 : _this.props.onGestureEvent(e);
+
+        _this.handleEvent(e);
+      };
+
+      _this.lastActive = false;
+      return _this;
+    }
+
+    (0, _createClass2.default)(BaseButton, [{
+      key: "render",
+      value: function render() {
+        var _this$props = this.props,
+            rippleColor = _this$props.rippleColor,
+            rest = (0, _objectWithoutProperties2.default)(_this$props, ["rippleColor"]);
+        return React.createElement(RawButton, (0, _extends2.default)({
+          rippleColor: (0, _reactNative.processColor)(rippleColor)
+        }, rest, {
+          onGestureEvent: this.onGestureEvent,
+          onHandlerStateChange: this.onHandlerStateChange,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 106,
+            columnNumber: 7
+          }
+        }));
+      }
+    }]);
+    return BaseButton;
+  }(React.Component);
+
+  exports.BaseButton = BaseButton;
+
+  var AnimatedBaseButton = _reactNative.Animated.createAnimatedComponent(BaseButton);
+
+  var btnStyles = _reactNative.StyleSheet.create({
+    underlay: {
+      position: 'absolute',
+      left: 0,
+      right: 0,
+      bottom: 0,
+      top: 0
+    }
+  });
+
+  var RectButton = function (_React$Component2) {
+    (0, _inherits2.default)(RectButton, _React$Component2);
+
+    var _super2 = _createSuper(RectButton);
+
+    function RectButton(props) {
+      var _this2;
+
+      (0, _classCallCheck2.default)(this, RectButton);
+      _this2 = _super2.call(this, props);
+
+      _this2.onActiveStateChange = function (active) {
+        if (_reactNative.Platform.OS !== 'android') {
+          _this2.opacity.setValue(active ? _this2.props.activeOpacity : 0);
+        }
+
+        _this2.props.onActiveStateChange == null ? void 0 : _this2.props.onActiveStateChange(active);
+      };
+
+      _this2.opacity = new _reactNative.Animated.Value(0);
+      return _this2;
+    }
+
+    (0, _createClass2.default)(RectButton, [{
+      key: "render",
+      value: function render() {
+        var _this$props2 = this.props,
+            children = _this$props2.children,
+            style = _this$props2.style,
+            rest = (0, _objectWithoutProperties2.default)(_this$props2, ["children", "style"]);
+
+        var resolvedStyle = _reactNative.StyleSheet.flatten(style != null ? style : {});
+
+        return React.createElement(BaseButton, (0, _extends2.default)({}, rest, {
+          style: resolvedStyle,
+          onActiveStateChange: this.onActiveStateChange,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 155,
+            columnNumber: 7
+          }
+        }), React.createElement(_reactNative.Animated.View, {
+          style: [btnStyles.underlay, {
+            opacity: this.opacity,
+            backgroundColor: this.props.underlayColor,
+            borderRadius: resolvedStyle.borderRadius,
+            borderTopLeftRadius: resolvedStyle.borderTopLeftRadius,
+            borderTopRightRadius: resolvedStyle.borderTopRightRadius,
+            borderBottomLeftRadius: resolvedStyle.borderBottomLeftRadius,
+            borderBottomRightRadius: resolvedStyle.borderBottomRightRadius
+          }],
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 159,
+            columnNumber: 9
+          }
+        }), children);
+      }
+    }]);
+    return RectButton;
+  }(React.Component);
+
+  exports.RectButton = RectButton;
+  RectButton.defaultProps = {
+    activeOpacity: 0.105,
+    underlayColor: 'black'
+  };
+
+  var BorderlessButton = function (_React$Component3) {
+    (0, _inherits2.default)(BorderlessButton, _React$Component3);
+
+    var _super3 = _createSuper(BorderlessButton);
+
+    function BorderlessButton(props) {
+      var _this3;
+
+      (0, _classCallCheck2.default)(this, BorderlessButton);
+      _this3 = _super3.call(this, props);
+
+      _this3.onActiveStateChange = function (active) {
+        if (_reactNative.Platform.OS !== 'android') {
+          _this3.opacity.setValue(active ? _this3.props.activeOpacity : 1);
+        }
+
+        _this3.props.onActiveStateChange == null ? void 0 : _this3.props.onActiveStateChange(active);
+      };
+
+      _this3.opacity = new _reactNative.Animated.Value(1);
+      return _this3;
+    }
+
+    (0, _createClass2.default)(BorderlessButton, [{
+      key: "render",
+      value: function render() {
+        var _this$props3 = this.props,
+            children = _this$props3.children,
+            style = _this$props3.style,
+            rest = (0, _objectWithoutProperties2.default)(_this$props3, ["children", "style"]);
+        return React.createElement(AnimatedBaseButton, (0, _extends2.default)({}, rest, {
+          onActiveStateChange: this.onActiveStateChange,
+          style: [style, _reactNative.Platform.OS === 'ios' && {
+            opacity: this.opacity
+          }],
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 204,
+            columnNumber: 7
+          }
+        }), children);
+      }
+    }]);
+    return BorderlessButton;
+  }(React.Component);
+
+  exports.BorderlessButton = BorderlessButton;
+  BorderlessButton.defaultProps = {
+    activeOpacity: 0.3,
+    borderless: true
+  };
+},514,[3,31,137,5,6,10,12,9,22,45,1,519,528,511],"node_modules/react-native-gesture-handler/src/components/GestureButtons.tsx");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  Object.defineProperty(exports, "TouchableNativeFeedback", {
+    enumerable: true,
+    get: function get() {
+      return _TouchableNativeFeedback.default;
+    }
+  });
+  Object.defineProperty(exports, "TouchableWithoutFeedback", {
+    enumerable: true,
+    get: function get() {
+      return _TouchableWithoutFeedback.default;
+    }
+  });
+  Object.defineProperty(exports, "TouchableOpacity", {
+    enumerable: true,
+    get: function get() {
+      return _TouchableOpacity.default;
+    }
+  });
+  Object.defineProperty(exports, "TouchableHighlight", {
+    enumerable: true,
+    get: function get() {
+      return _TouchableHighlight.default;
+    }
+  });
+
+  var _TouchableNativeFeedback = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "./TouchableNativeFeedback"));
+
+  var _TouchableWithoutFeedback = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "./TouchableWithoutFeedback"));
+
+  var _TouchableOpacity = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "./TouchableOpacity"));
+
+  var _TouchableHighlight = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "./TouchableHighlight"));
+},515,[3,529,524,525,526],"node_modules/react-native-gesture-handler/src/components/touchables/index.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.FlatList = exports.DrawerLayoutAndroid = exports.TextInput = exports.Switch = exports.ScrollView = void 0;
+
+  var _extends2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/extends"));
+
+  var React = _$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/interopRequireWildcard")(_$$_REQUIRE(_dependencyMap[3], "react"));
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[4], "react-native");
+
+  var _createNativeWrapper = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[5], "../handlers/createNativeWrapper"));
+
+  var _this = this,
+      _jsxFileName = "/Users/jevon/Documents/Carriage/node_modules/react-native-gesture-handler/src/components/GestureComponents.tsx";
+
+  var ScrollView = (0, _createNativeWrapper.default)(_reactNative.ScrollView, {
+    disallowInterruption: true,
+    shouldCancelWhenOutside: false
+  });
+  exports.ScrollView = ScrollView;
+  var Switch = (0, _createNativeWrapper.default)(_reactNative.Switch, {
+    shouldCancelWhenOutside: false,
+    shouldActivateOnStart: true,
+    disallowInterruption: true
+  });
+  exports.Switch = Switch;
+  var TextInput = (0, _createNativeWrapper.default)(_reactNative.TextInput);
+  exports.TextInput = TextInput;
+  var DrawerLayoutAndroid = (0, _createNativeWrapper.default)(_reactNative.DrawerLayoutAndroid, {
+    disallowInterruption: true
+  });
+  exports.DrawerLayoutAndroid = DrawerLayoutAndroid;
+  DrawerLayoutAndroid.positions = {
+    Left: 'left',
+    Right: 'right'
+  };
+  var FlatList = React.forwardRef(function (props, ref) {
+    return React.createElement(_reactNative.FlatList, (0, _extends2.default)({
+      ref: ref
+    }, props, {
+      renderScrollComponent: function renderScrollComponent(scrollProps) {
+        return React.createElement(ScrollView, (0, _extends2.default)({}, scrollProps, {
+          __self: _this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 63,
+            columnNumber: 47
+          }
+        }));
+      },
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 60,
+        columnNumber: 5
+      }
+    }));
+  });
+  exports.FlatList = FlatList;
+},516,[3,31,22,45,1,519],"node_modules/react-native-gesture-handler/src/components/GestureComponents.tsx");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = gestureHandlerRootHOC;
+
+  var _extends2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/extends"));
+
+  var React = _$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/interopRequireWildcard")(_$$_REQUIRE(_dependencyMap[3], "react"));
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[4], "react-native");
+
+  var _hoistNonReactStatics = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[5], "hoist-non-react-statics"));
+
+  var _GestureHandlerRootView = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[6], "./GestureHandlerRootView"));
+
+  var _jsxFileName = "/Users/jevon/Documents/Carriage/node_modules/react-native-gesture-handler/src/gestureHandlerRootHOC.tsx";
+
+  function gestureHandlerRootHOC(Component, containerStyles) {
+    function Wrapper(props) {
+      return React.createElement(_GestureHandlerRootView.default, {
+        style: [styles.container, containerStyles],
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 12,
+          columnNumber: 7
+        }
+      }, React.createElement(Component, (0, _extends2.default)({}, props, {
+        __self: this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 13,
+          columnNumber: 9
+        }
+      })));
+    }
+
+    Wrapper.displayName = "gestureHandlerRootHOC(" + (Component.displayName || Component.name) + ")";
+    (0, _hoistNonReactStatics.default)(Wrapper, Component);
+    return Wrapper;
+  }
+
+  var styles = _reactNative.StyleSheet.create({
+    container: {
+      flex: 1
+    }
+  });
+},517,[3,31,22,45,1,530,518],"node_modules/react-native-gesture-handler/src/gestureHandlerRootHOC.tsx");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[0], "react-native");
+
+  var _default = _reactNative.View;
+  exports.default = _default;
+},518,[1],"node_modules/react-native-gesture-handler/src/GestureHandlerRootView.tsx");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = createNativeWrapper;
+
+  var _extends2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/extends"));
+
+  var _toConsumableArray2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/toConsumableArray"));
+
+  var React = _$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/interopRequireWildcard")(_$$_REQUIRE(_dependencyMap[4], "react"));
+
+  var _jsxFileName = "/Users/jevon/Documents/Carriage/node_modules/react-native-gesture-handler/src/handlers/createNativeWrapper.tsx";
+  var NATIVE_WRAPPER_PROPS_FILTER = [].concat((0, _toConsumableArray2.default)(_$$_REQUIRE(_dependencyMap[5], "./NativeViewGestureHandler").nativeViewProps), ['onGestureHandlerEvent', 'onGestureHandlerStateChange']);
+
+  function createNativeWrapper(Component) {
+    var _this = this;
+
+    var config = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+    var ComponentWrapper = React.forwardRef(function (props, ref) {
+      var gestureHandlerProps = Object.keys(props).reduce(function (res, key) {
+        var allowedKeys = NATIVE_WRAPPER_PROPS_FILTER;
+
+        if (allowedKeys.includes(key)) {
+          res[key] = props[key];
+        }
+
+        return res;
+      }, (0, _extends2.default)({}, config));
+
+      var _ref = (0, React.useRef)();
+
+      var _gestureHandlerRef = (0, React.useRef)();
+
+      (0, React.useImperativeHandle)(ref, function () {
+        var node = _gestureHandlerRef.current;
+
+        if (_ref.current && node) {
+          _ref.current.handlerTag = node.handlerTag;
+          return _ref.current;
+        }
+
+        return null;
+      }, [_ref, _gestureHandlerRef]);
+      return React.createElement(_$$_REQUIRE(_dependencyMap[5], "./NativeViewGestureHandler").NativeViewGestureHandler, (0, _extends2.default)({}, gestureHandlerProps, {
+        ref: _gestureHandlerRef,
+        __self: _this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 62,
+          columnNumber: 7
+        }
+      }), React.createElement(Component, (0, _extends2.default)({}, props, {
+        ref: _ref,
+        __self: _this,
+        __source: {
+          fileName: _jsxFileName,
+          lineNumber: 66,
+          columnNumber: 9
+        }
+      })));
+    });
+    ComponentWrapper.displayName = Component.displayName || 'ComponentWrapper';
+    return ComponentWrapper;
+  }
+},519,[3,31,39,22,45,513],"node_modules/react-native-gesture-handler/src/handlers/createNativeWrapper.tsx");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _extends2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/extends"));
+
+  var _classCallCheck2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/classCallCheck"));
+
+  var _createClass2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/createClass"));
+
+  var _inherits2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/inherits"));
+
+  var _possibleConstructorReturn2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/possibleConstructorReturn"));
+
+  var _getPrototypeOf2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/getPrototypeOf"));
+
+  var React = _$$_REQUIRE(_dependencyMap[7], "@babel/runtime/helpers/interopRequireWildcard")(_$$_REQUIRE(_dependencyMap[8], "react"));
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[9], "react-native");
+
+  var _jsxFileName = "/Users/jevon/Documents/Carriage/node_modules/react-native-gesture-handler/src/components/Swipeable.tsx";
+
+  function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2.default)(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2.default)(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2.default)(this, result); }; }
+
+  function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+  var DRAG_TOSS = 0.05;
+
+  var Swipeable = function (_Component) {
+    (0, _inherits2.default)(Swipeable, _Component);
+
+    var _super = _createSuper(Swipeable);
+
+    function Swipeable(_props) {
+      var _this;
+
+      (0, _classCallCheck2.default)(this, Swipeable);
+      _this = _super.call(this, _props);
+
+      _this.updateAnimatedEvent = function (props, state) {
+        var friction = props.friction,
+            overshootFriction = props.overshootFriction;
+        var dragX = state.dragX,
+            rowTranslation = state.rowTranslation,
+            _state$leftWidth = state.leftWidth,
+            leftWidth = _state$leftWidth === void 0 ? 0 : _state$leftWidth,
+            _state$rowWidth = state.rowWidth,
+            rowWidth = _state$rowWidth === void 0 ? 0 : _state$rowWidth;
+        var _state$rightOffset = state.rightOffset,
+            rightOffset = _state$rightOffset === void 0 ? rowWidth : _state$rightOffset;
+        var rightWidth = Math.max(0, rowWidth - rightOffset);
+        var _props$overshootLeft = props.overshootLeft,
+            overshootLeft = _props$overshootLeft === void 0 ? leftWidth > 0 : _props$overshootLeft,
+            _props$overshootRight = props.overshootRight,
+            overshootRight = _props$overshootRight === void 0 ? rightWidth > 0 : _props$overshootRight;
+
+        var transX = _reactNative.Animated.add(rowTranslation, dragX.interpolate({
+          inputRange: [0, friction],
+          outputRange: [0, 1]
+        })).interpolate({
+          inputRange: [-rightWidth - (overshootRight ? 1 : overshootFriction), -rightWidth, leftWidth, leftWidth + (overshootLeft ? 1 : overshootFriction)],
+          outputRange: [-rightWidth - (overshootRight || overshootFriction > 1 ? 1 : 0), -rightWidth, leftWidth, leftWidth + (overshootLeft || overshootFriction > 1 ? 1 : 0)]
+        });
+
+        _this.transX = transX;
+        _this.showLeftAction = leftWidth > 0 ? transX.interpolate({
+          inputRange: [-1, 0, leftWidth],
+          outputRange: [0, 0, 1]
+        }) : new _reactNative.Animated.Value(0);
+        _this.leftActionTranslate = _this.showLeftAction.interpolate({
+          inputRange: [0, Number.MIN_VALUE],
+          outputRange: [-10000, 0],
+          extrapolate: 'clamp'
+        });
+        _this.showRightAction = rightWidth > 0 ? transX.interpolate({
+          inputRange: [-rightWidth, 0, 1],
+          outputRange: [1, 0, 0]
+        }) : new _reactNative.Animated.Value(0);
+        _this.rightActionTranslate = _this.showRightAction.interpolate({
+          inputRange: [0, Number.MIN_VALUE],
+          outputRange: [-10000, 0],
+          extrapolate: 'clamp'
+        });
+      };
+
+      _this.onTapHandlerStateChange = function (_ref) {
+        var nativeEvent = _ref.nativeEvent;
+
+        if (nativeEvent.oldState === _$$_REQUIRE(_dependencyMap[10], "../State").State.ACTIVE) {
+          _this.close();
+        }
+      };
+
+      _this.onHandlerStateChange = function (ev) {
+        if (ev.nativeEvent.oldState === _$$_REQUIRE(_dependencyMap[10], "../State").State.ACTIVE) {
+          _this.handleRelease(ev);
+        }
+      };
+
+      _this.handleRelease = function (ev) {
+        var _ev$nativeEvent = ev.nativeEvent,
+            velocityX = _ev$nativeEvent.velocityX,
+            dragX = _ev$nativeEvent.translationX;
+        var _this$state = _this.state,
+            _this$state$leftWidth = _this$state.leftWidth,
+            leftWidth = _this$state$leftWidth === void 0 ? 0 : _this$state$leftWidth,
+            _this$state$rowWidth = _this$state.rowWidth,
+            rowWidth = _this$state$rowWidth === void 0 ? 0 : _this$state$rowWidth,
+            rowState = _this$state.rowState;
+        var _this$state$rightOffs = _this.state.rightOffset,
+            rightOffset = _this$state$rightOffs === void 0 ? rowWidth : _this$state$rightOffs;
+        var rightWidth = rowWidth - rightOffset;
+        var _this$props = _this.props,
+            friction = _this$props.friction,
+            _this$props$leftThres = _this$props.leftThreshold,
+            leftThreshold = _this$props$leftThres === void 0 ? leftWidth / 2 : _this$props$leftThres,
+            _this$props$rightThre = _this$props.rightThreshold,
+            rightThreshold = _this$props$rightThre === void 0 ? rightWidth / 2 : _this$props$rightThre;
+        var startOffsetX = _this.currentOffset() + dragX / friction;
+        var translationX = (dragX + DRAG_TOSS * velocityX) / friction;
+        var toValue = 0;
+
+        if (rowState === 0) {
+          if (translationX > leftThreshold) {
+            toValue = leftWidth;
+          } else if (translationX < -rightThreshold) {
+            toValue = -rightWidth;
+          }
+        } else if (rowState === 1) {
+          if (translationX > -leftThreshold) {
+            toValue = leftWidth;
+          }
+        } else {
+          if (translationX < rightThreshold) {
+            toValue = -rightWidth;
+          }
+        }
+
+        _this.animateRow(startOffsetX, toValue, velocityX / friction);
+      };
+
+      _this.animateRow = function (fromValue, toValue, velocityX) {
+        var _this$state2 = _this.state,
+            dragX = _this$state2.dragX,
+            rowTranslation = _this$state2.rowTranslation;
+        dragX.setValue(0);
+        rowTranslation.setValue(fromValue);
+
+        _this.setState({
+          rowState: Math.sign(toValue)
+        });
+
+        _reactNative.Animated.spring(rowTranslation, (0, _extends2.default)({
+          restSpeedThreshold: 1.7,
+          restDisplacementThreshold: 0.4,
+          velocity: velocityX,
+          bounciness: 0,
+          toValue: toValue,
+          useNativeDriver: _this.props.useNativeAnimations
+        }, _this.props.animationOptions)).start(function (_ref2) {
+          var finished = _ref2.finished;
+
+          if (finished) {
+            if (toValue > 0 && _this.props.onSwipeableLeftOpen) {
+              _this.props.onSwipeableLeftOpen();
+            } else if (toValue < 0 && _this.props.onSwipeableRightOpen) {
+              _this.props.onSwipeableRightOpen();
+            }
+
+            if (toValue === 0) {
+              _this.props.onSwipeableClose == null ? void 0 : _this.props.onSwipeableClose();
+            } else {
+              _this.props.onSwipeableOpen == null ? void 0 : _this.props.onSwipeableOpen();
+            }
+          }
+        });
+
+        if (toValue > 0 && _this.props.onSwipeableLeftWillOpen) {
+          _this.props.onSwipeableLeftWillOpen();
+        } else if (toValue < 0 && _this.props.onSwipeableRightWillOpen) {
+          _this.props.onSwipeableRightWillOpen();
+        }
+
+        if (toValue === 0) {
+          _this.props.onSwipeableWillClose == null ? void 0 : _this.props.onSwipeableWillClose();
+        } else {
+          _this.props.onSwipeableWillOpen == null ? void 0 : _this.props.onSwipeableWillOpen();
+        }
+      };
+
+      _this.onRowLayout = function (_ref3) {
+        var nativeEvent = _ref3.nativeEvent;
+
+        _this.setState({
+          rowWidth: nativeEvent.layout.width
+        });
+      };
+
+      _this.currentOffset = function () {
+        var _this$state3 = _this.state,
+            _this$state3$leftWidt = _this$state3.leftWidth,
+            leftWidth = _this$state3$leftWidt === void 0 ? 0 : _this$state3$leftWidt,
+            _this$state3$rowWidth = _this$state3.rowWidth,
+            rowWidth = _this$state3$rowWidth === void 0 ? 0 : _this$state3$rowWidth,
+            rowState = _this$state3.rowState;
+        var _this$state$rightOffs2 = _this.state.rightOffset,
+            rightOffset = _this$state$rightOffs2 === void 0 ? rowWidth : _this$state$rightOffs2;
+        var rightWidth = rowWidth - rightOffset;
+
+        if (rowState === 1) {
+          return leftWidth;
+        } else if (rowState === -1) {
+          return -rightWidth;
+        }
+
+        return 0;
+      };
+
+      _this.close = function () {
+        _this.animateRow(_this.currentOffset(), 0);
+      };
+
+      _this.openLeft = function () {
+        var _this$state$leftWidth2 = _this.state.leftWidth,
+            leftWidth = _this$state$leftWidth2 === void 0 ? 0 : _this$state$leftWidth2;
+
+        _this.animateRow(_this.currentOffset(), leftWidth);
+      };
+
+      _this.openRight = function () {
+        var _this$state$rowWidth2 = _this.state.rowWidth,
+            rowWidth = _this$state$rowWidth2 === void 0 ? 0 : _this$state$rowWidth2;
+        var _this$state$rightOffs3 = _this.state.rightOffset,
+            rightOffset = _this$state$rightOffs3 === void 0 ? rowWidth : _this$state$rightOffs3;
+        var rightWidth = rowWidth - rightOffset;
+
+        _this.animateRow(_this.currentOffset(), -rightWidth);
+      };
+
+      var _dragX = new _reactNative.Animated.Value(0);
+
+      _this.state = {
+        dragX: _dragX,
+        rowTranslation: new _reactNative.Animated.Value(0),
+        rowState: 0,
+        leftWidth: undefined,
+        rightOffset: undefined,
+        rowWidth: undefined
+      };
+
+      _this.updateAnimatedEvent(_props, _this.state);
+
+      _this.onGestureEvent = _reactNative.Animated.event([{
+        nativeEvent: {
+          translationX: _dragX
+        }
+      }], {
+        useNativeDriver: _props.useNativeAnimations
+      });
+      return _this;
+    }
+
+    (0, _createClass2.default)(Swipeable, [{
+      key: "UNSAFE_componentWillUpdate",
+      value: function UNSAFE_componentWillUpdate(props, state) {
+        if (this.props.friction !== props.friction || this.props.overshootLeft !== props.overshootLeft || this.props.overshootRight !== props.overshootRight || this.props.overshootFriction !== props.overshootFriction || this.state.leftWidth !== state.leftWidth || this.state.rightOffset !== state.rightOffset || this.state.rowWidth !== state.rowWidth) {
+          this.updateAnimatedEvent(props, state);
+        }
+      }
+    }, {
+      key: "render",
+      value: function render() {
+        var _this2 = this;
+
+        var rowState = this.state.rowState;
+        var _this$props2 = this.props,
+            children = _this$props2.children,
+            renderLeftActions = _this$props2.renderLeftActions,
+            renderRightActions = _this$props2.renderRightActions;
+        var left = renderLeftActions && React.createElement(_reactNative.Animated.View, {
+          style: [styles.leftActions, {
+            transform: [{
+              translateX: this.leftActionTranslate
+            }]
+          }],
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 350,
+            columnNumber: 7
+          }
+        }, renderLeftActions(this.showLeftAction, this.transX), React.createElement(_reactNative.View, {
+          onLayout: function onLayout(_ref4) {
+            var nativeEvent = _ref4.nativeEvent;
+            return _this2.setState({
+              leftWidth: nativeEvent.layout.x
+            });
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 357,
+            columnNumber: 9
+          }
+        }));
+        var right = renderRightActions && React.createElement(_reactNative.Animated.View, {
+          style: [styles.rightActions, {
+            transform: [{
+              translateX: this.rightActionTranslate
+            }]
+          }],
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 366,
+            columnNumber: 7
+          }
+        }, renderRightActions(this.showRightAction, this.transX), React.createElement(_reactNative.View, {
+          onLayout: function onLayout(_ref5) {
+            var nativeEvent = _ref5.nativeEvent;
+            return _this2.setState({
+              rightOffset: nativeEvent.layout.x
+            });
+          },
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 372,
+            columnNumber: 9
+          }
+        }));
+        return React.createElement(_$$_REQUIRE(_dependencyMap[11], "../handlers/gestureHandlers").PanGestureHandler, (0, _extends2.default)({
+          activeOffsetX: [-10, 10]
+        }, this.props, {
+          onGestureEvent: this.onGestureEvent,
+          onHandlerStateChange: this.onHandlerStateChange,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 381,
+            columnNumber: 7
+          }
+        }), React.createElement(_reactNative.Animated.View, {
+          onLayout: this.onRowLayout,
+          style: [styles.container, this.props.containerStyle],
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 386,
+            columnNumber: 9
+          }
+        }, left, right, React.createElement(_$$_REQUIRE(_dependencyMap[11], "../handlers/gestureHandlers").TapGestureHandler, {
+          enabled: rowState !== 0,
+          onHandlerStateChange: this.onTapHandlerStateChange,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 391,
+            columnNumber: 11
+          }
+        }, React.createElement(_reactNative.Animated.View, {
+          pointerEvents: rowState === 0 ? 'auto' : 'box-only',
+          style: [{
+            transform: [{
+              translateX: this.transX
+            }]
+          }, this.props.childrenContainerStyle],
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 394,
+            columnNumber: 13
+          }
+        }, children))));
+      }
+    }]);
+    return Swipeable;
+  }(React.Component);
+
+  exports.default = Swipeable;
+  Swipeable.defaultProps = {
+    friction: 1,
+    overshootFriction: 1,
+    useNativeAnimations: true
+  };
+
+  var styles = _reactNative.StyleSheet.create({
+    container: {
+      overflow: 'hidden'
+    },
+    leftActions: (0, _extends2.default)({}, _reactNative.StyleSheet.absoluteFillObject, {
+      flexDirection: _reactNative.I18nManager.isRTL ? 'row-reverse' : 'row'
+    }),
+    rightActions: (0, _extends2.default)({}, _reactNative.StyleSheet.absoluteFillObject, {
+      flexDirection: _reactNative.I18nManager.isRTL ? 'row' : 'row-reverse'
+    })
+  });
+},520,[3,31,5,6,10,12,9,22,45,1,511,512],"node_modules/react-native-gesture-handler/src/components/Swipeable.tsx");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _extends2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/extends"));
+
+  var _classCallCheck2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/classCallCheck"));
+
+  var _createClass2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/createClass"));
+
+  var _assertThisInitialized2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/assertThisInitialized"));
+
+  var _inherits2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/inherits"));
+
+  var _possibleConstructorReturn2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/possibleConstructorReturn"));
+
+  var _getPrototypeOf2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[7], "@babel/runtime/helpers/getPrototypeOf"));
+
+  var React = _$$_REQUIRE(_dependencyMap[8], "@babel/runtime/helpers/interopRequireWildcard")(_$$_REQUIRE(_dependencyMap[9], "react"));
+
+  var _invariant = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[10], "invariant"));
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[11], "react-native");
+
+  var _jsxFileName = "/Users/jevon/Documents/Carriage/node_modules/react-native-gesture-handler/src/components/DrawerLayout.tsx";
+
+  function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2.default)(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2.default)(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2.default)(this, result); }; }
+
+  function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+  var DRAG_TOSS = 0.05;
+  var IDLE = 'Idle';
+  var DRAGGING = 'Dragging';
+  var SETTLING = 'Settling';
+
+  var DrawerLayout = function (_Component) {
+    (0, _inherits2.default)(DrawerLayout, _Component);
+
+    var _super = _createSuper(DrawerLayout);
+
+    function DrawerLayout(_props) {
+      var _this;
+
+      (0, _classCallCheck2.default)(this, DrawerLayout);
+      _this = _super.call(this, _props);
+      _this.accessibilityIsModalView = React.createRef();
+      _this.pointerEventsView = React.createRef();
+      _this.panGestureHandler = React.createRef();
+      _this.drawerShown = false;
+
+      _this.updateAnimatedEvent = function (props, state) {
+        var drawerPosition = props.drawerPosition,
+            drawerWidth = props.drawerWidth,
+            drawerType = props.drawerType;
+        var dragXValue = state.dragX,
+            touchXValue = state.touchX,
+            drawerTranslation = state.drawerTranslation,
+            containerWidth = state.containerWidth;
+        var dragX = dragXValue;
+        var touchX = touchXValue;
+
+        if (drawerPosition !== 'left') {
+          dragX = _reactNative.Animated.multiply(new _reactNative.Animated.Value(-1), dragXValue);
+          touchX = _reactNative.Animated.add(new _reactNative.Animated.Value(containerWidth), _reactNative.Animated.multiply(new _reactNative.Animated.Value(-1), touchXValue));
+          touchXValue.setValue(containerWidth);
+        } else {
+          touchXValue.setValue(0);
+        }
+
+        var translationX = dragX;
+
+        if (drawerType === 'front') {
+          var startPositionX = _reactNative.Animated.add(touchX, _reactNative.Animated.multiply(new _reactNative.Animated.Value(-1), dragX));
+
+          var dragOffsetFromOnStartPosition = startPositionX.interpolate({
+            inputRange: [drawerWidth - 1, drawerWidth, drawerWidth + 1],
+            outputRange: [0, 0, 1]
+          });
+          translationX = _reactNative.Animated.add(dragX, dragOffsetFromOnStartPosition);
+        }
+
+        _this.openValue = _reactNative.Animated.add(translationX, drawerTranslation).interpolate({
+          inputRange: [0, drawerWidth],
+          outputRange: [0, 1],
+          extrapolate: 'clamp'
+        });
+        var gestureOptions = {
+          useNativeDriver: props.useNativeAnimations
+        };
+
+        if (_this.props.onDrawerSlide) {
+          gestureOptions.listener = function (ev) {
+            var translationX = Math.floor(Math.abs(ev.nativeEvent.translationX));
+            var position = translationX / _this.state.containerWidth;
+            _this.props.onDrawerSlide == null ? void 0 : _this.props.onDrawerSlide(position);
+          };
+        }
+
+        _this.onGestureEvent = _reactNative.Animated.event([{
+          nativeEvent: {
+            translationX: dragXValue,
+            x: touchXValue
+          }
+        }], gestureOptions);
+      };
+
+      _this.handleContainerLayout = function (_ref) {
+        var nativeEvent = _ref.nativeEvent;
+
+        _this.setState({
+          containerWidth: nativeEvent.layout.width
+        });
+      };
+
+      _this.emitStateChanged = function (newState, drawerWillShow) {
+        _this.props.onDrawerStateChanged == null ? void 0 : _this.props.onDrawerStateChanged(newState, drawerWillShow);
+      };
+
+      _this.openingHandlerStateChange = function (_ref2) {
+        var nativeEvent = _ref2.nativeEvent;
+
+        if (nativeEvent.oldState === _$$_REQUIRE(_dependencyMap[12], "../State").State.ACTIVE) {
+          _this.handleRelease({
+            nativeEvent: nativeEvent
+          });
+        } else if (nativeEvent.state === _$$_REQUIRE(_dependencyMap[12], "../State").State.ACTIVE) {
+          _this.emitStateChanged(DRAGGING, false);
+
+          if (_this.props.keyboardDismissMode === 'on-drag') {
+            _reactNative.Keyboard.dismiss();
+          }
+
+          if (_this.props.hideStatusBar) {
+            _reactNative.StatusBar.setHidden(true, _this.props.statusBarAnimation || 'slide');
+          }
+        }
+      };
+
+      _this.onTapHandlerStateChange = function (_ref3) {
+        var nativeEvent = _ref3.nativeEvent;
+
+        if (_this.drawerShown && nativeEvent.oldState === _$$_REQUIRE(_dependencyMap[12], "../State").State.ACTIVE && _this.props.drawerLockMode !== 'locked-open') {
+          _this.closeDrawer();
+        }
+      };
+
+      _this.handleRelease = function (_ref4) {
+        var nativeEvent = _ref4.nativeEvent;
+        var _this$props = _this.props,
+            drawerWidth = _this$props.drawerWidth,
+            drawerPosition = _this$props.drawerPosition,
+            drawerType = _this$props.drawerType;
+        var containerWidth = _this.state.containerWidth;
+        var dragX = nativeEvent.translationX,
+            velocityX = nativeEvent.velocityX,
+            touchX = nativeEvent.x;
+
+        if (drawerPosition !== 'left') {
+          dragX = -dragX;
+          touchX = containerWidth - touchX;
+          velocityX = -velocityX;
+        }
+
+        var gestureStartX = touchX - dragX;
+        var dragOffsetBasedOnStart = 0;
+
+        if (drawerType === 'front') {
+          dragOffsetBasedOnStart = gestureStartX > drawerWidth ? gestureStartX - drawerWidth : 0;
+        }
+
+        var startOffsetX = dragX + dragOffsetBasedOnStart + (_this.drawerShown ? drawerWidth : 0);
+        var projOffsetX = startOffsetX + DRAG_TOSS * velocityX;
+        var shouldOpen = projOffsetX > drawerWidth / 2;
+
+        if (shouldOpen) {
+          _this.animateDrawer(startOffsetX, drawerWidth, velocityX);
+        } else {
+          _this.animateDrawer(startOffsetX, 0, velocityX);
+        }
+      };
+
+      _this.updateShowing = function (showing) {
+        var _this$accessibilityIs, _this$pointerEventsVi, _this$panGestureHandl;
+
+        _this.drawerShown = showing;
+        (_this$accessibilityIs = _this.accessibilityIsModalView.current) == null ? void 0 : _this$accessibilityIs.setNativeProps({
+          accessibilityViewIsModal: showing
+        });
+        (_this$pointerEventsVi = _this.pointerEventsView.current) == null ? void 0 : _this$pointerEventsVi.setNativeProps({
+          pointerEvents: showing ? 'auto' : 'none'
+        });
+        var _this$props2 = _this.props,
+            drawerPosition = _this$props2.drawerPosition,
+            minSwipeDistance = _this$props2.minSwipeDistance,
+            edgeWidth = _this$props2.edgeWidth;
+        var fromLeft = drawerPosition === 'left';
+        var gestureOrientation = (fromLeft ? 1 : -1) * (_this.drawerShown ? -1 : 1);
+        var hitSlop = fromLeft ? {
+          left: 0,
+          width: showing ? undefined : edgeWidth
+        } : {
+          right: 0,
+          width: showing ? undefined : edgeWidth
+        };
+        (_this$panGestureHandl = _this.panGestureHandler.current) == null ? void 0 : _this$panGestureHandl.setNativeProps({
+          hitSlop: hitSlop,
+          activeOffsetX: gestureOrientation * minSwipeDistance
+        });
+      };
+
+      _this.animateDrawer = function (fromValue, toValue, velocity, speed) {
+        _this.state.dragX.setValue(0);
+
+        _this.state.touchX.setValue(_this.props.drawerPosition === 'left' ? 0 : _this.state.containerWidth);
+
+        if (fromValue != null) {
+          var nextFramePosition = fromValue;
+
+          if (_this.props.useNativeAnimations) {
+            if (fromValue < toValue && velocity > 0) {
+              nextFramePosition = Math.min(fromValue + velocity / 60.0, toValue);
+            } else if (fromValue > toValue && velocity < 0) {
+              nextFramePosition = Math.max(fromValue + velocity / 60.0, toValue);
+            }
+          }
+
+          _this.state.drawerTranslation.setValue(nextFramePosition);
+        }
+
+        var willShow = toValue !== 0;
+
+        _this.updateShowing(willShow);
+
+        _this.emitStateChanged(SETTLING, willShow);
+
+        if (_this.props.hideStatusBar) {
+          _reactNative.StatusBar.setHidden(willShow, _this.props.statusBarAnimation || 'slide');
+        }
+
+        _reactNative.Animated.spring(_this.state.drawerTranslation, {
+          velocity: velocity,
+          bounciness: 0,
+          toValue: toValue,
+          useNativeDriver: _this.props.useNativeAnimations,
+          speed: speed != null ? speed : undefined
+        }).start(function (_ref5) {
+          var finished = _ref5.finished;
+
+          if (finished) {
+            _this.emitStateChanged(IDLE, willShow);
+
+            if (willShow) {
+              _this.props.onDrawerOpen == null ? void 0 : _this.props.onDrawerOpen();
+            } else {
+              _this.props.onDrawerClose == null ? void 0 : _this.props.onDrawerClose();
+            }
+          }
+        });
+      };
+
+      _this.openDrawer = function () {
+        var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+        _this.animateDrawer(undefined, _this.props.drawerWidth, options.velocity ? options.velocity : 0);
+
+        _this.forceUpdate();
+      };
+
+      _this.closeDrawer = function () {
+        var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+        _this.animateDrawer(undefined, 0, options.velocity ? options.velocity : 0);
+
+        _this.forceUpdate();
+      };
+
+      _this.renderOverlay = function () {
+        (0, _invariant.default)(_this.openValue, 'should be set');
+
+        var overlayOpacity = _this.openValue.interpolate({
+          inputRange: [0, 1],
+          outputRange: [0, 1],
+          extrapolate: 'clamp'
+        });
+
+        var dynamicOverlayStyles = {
+          opacity: overlayOpacity,
+          backgroundColor: _this.props.overlayColor
+        };
+        return React.createElement(_$$_REQUIRE(_dependencyMap[13], "../handlers/gestureHandlers").TapGestureHandler, {
+          onHandlerStateChange: _this.onTapHandlerStateChange,
+          __self: (0, _assertThisInitialized2.default)(_this),
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 451,
+            columnNumber: 7
+          }
+        }, React.createElement(_reactNative.Animated.View, {
+          pointerEvents: _this.drawerShown ? 'auto' : 'none',
+          ref: _this.pointerEventsView,
+          style: [styles.overlay, dynamicOverlayStyles],
+          __self: (0, _assertThisInitialized2.default)(_this),
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 452,
+            columnNumber: 9
+          }
+        }));
+      };
+
+      _this.renderDrawer = function () {
+        var _this$props3 = _this.props,
+            drawerBackgroundColor = _this$props3.drawerBackgroundColor,
+            drawerWidth = _this$props3.drawerWidth,
+            drawerPosition = _this$props3.drawerPosition,
+            drawerType = _this$props3.drawerType,
+            drawerContainerStyle = _this$props3.drawerContainerStyle,
+            contentContainerStyle = _this$props3.contentContainerStyle;
+        var fromLeft = drawerPosition === 'left';
+        var drawerSlide = drawerType !== 'back';
+        var containerSlide = drawerType !== 'front';
+        var reverseContentDirection = _reactNative.I18nManager.isRTL ? fromLeft : !fromLeft;
+        var dynamicDrawerStyles = {
+          backgroundColor: drawerBackgroundColor,
+          width: drawerWidth
+        };
+        var openValue = _this.openValue;
+        (0, _invariant.default)(openValue, 'should be set');
+        var containerStyles;
+
+        if (containerSlide) {
+          var containerTranslateX = openValue.interpolate({
+            inputRange: [0, 1],
+            outputRange: fromLeft ? [0, drawerWidth] : [0, -drawerWidth],
+            extrapolate: 'clamp'
+          });
+          containerStyles = {
+            transform: [{
+              translateX: containerTranslateX
+            }]
+          };
+        }
+
+        var drawerTranslateX = 0;
+
+        if (drawerSlide) {
+          var closedDrawerOffset = fromLeft ? -drawerWidth : drawerWidth;
+          drawerTranslateX = openValue.interpolate({
+            inputRange: [0, 1],
+            outputRange: [closedDrawerOffset, 0],
+            extrapolate: 'clamp'
+          });
+        }
+
+        var drawerStyles = {
+          transform: [{
+            translateX: drawerTranslateX
+          }],
+          flexDirection: reverseContentDirection ? 'row-reverse' : 'row'
+        };
+        return React.createElement(_reactNative.Animated.View, {
+          style: styles.main,
+          onLayout: _this.handleContainerLayout,
+          __self: (0, _assertThisInitialized2.default)(_this),
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 518,
+            columnNumber: 7
+          }
+        }, React.createElement(_reactNative.Animated.View, {
+          style: [drawerType === 'front' ? styles.containerOnBack : styles.containerInFront, containerStyles, contentContainerStyle],
+          importantForAccessibility: _this.drawerShown ? 'no-hide-descendants' : 'yes',
+          __self: (0, _assertThisInitialized2.default)(_this),
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 519,
+            columnNumber: 9
+          }
+        }, typeof _this.props.children === 'function' ? _this.props.children(_this.openValue) : _this.props.children, _this.renderOverlay()), React.createElement(_reactNative.Animated.View, {
+          pointerEvents: "box-none",
+          ref: _this.accessibilityIsModalView,
+          accessibilityViewIsModal: _this.drawerShown,
+          style: [styles.drawerContainer, drawerStyles, drawerContainerStyle],
+          __self: (0, _assertThisInitialized2.default)(_this),
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 535,
+            columnNumber: 9
+          }
+        }, React.createElement(_reactNative.View, {
+          style: dynamicDrawerStyles,
+          __self: (0, _assertThisInitialized2.default)(_this),
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 540,
+            columnNumber: 11
+          }
+        }, _this.props.renderNavigationView(_this.openValue))));
+      };
+
+      _this.setPanGestureRef = function (ref) {
+        _this.panGestureHandler.current = ref;
+        _this.props.onGestureRef == null ? void 0 : _this.props.onGestureRef(ref);
+      };
+
+      var _dragX = new _reactNative.Animated.Value(0);
+
+      var _touchX = new _reactNative.Animated.Value(0);
+
+      var _drawerTranslation = new _reactNative.Animated.Value(0);
+
+      _this.state = {
+        dragX: _dragX,
+        touchX: _touchX,
+        drawerTranslation: _drawerTranslation,
+        containerWidth: 0
+      };
+
+      _this.updateAnimatedEvent(_props, _this.state);
+
+      return _this;
+    }
+
+    (0, _createClass2.default)(DrawerLayout, [{
+      key: "UNSAFE_componentWillUpdate",
+      value: function UNSAFE_componentWillUpdate(props, state) {
+        if (this.props.drawerPosition !== props.drawerPosition || this.props.drawerWidth !== props.drawerWidth || this.props.drawerType !== props.drawerType || this.state.containerWidth !== state.containerWidth) {
+          this.updateAnimatedEvent(props, state);
+        }
+      }
+    }, {
+      key: "render",
+      value: function render() {
+        var _this$props4 = this.props,
+            drawerPosition = _this$props4.drawerPosition,
+            drawerLockMode = _this$props4.drawerLockMode,
+            edgeWidth = _this$props4.edgeWidth,
+            minSwipeDistance = _this$props4.minSwipeDistance;
+        var fromLeft = drawerPosition === 'left';
+        var gestureOrientation = (fromLeft ? 1 : -1) * (this.drawerShown ? -1 : 1);
+        var hitSlop = fromLeft ? {
+          left: 0,
+          width: this.drawerShown ? undefined : edgeWidth
+        } : {
+          right: 0,
+          width: this.drawerShown ? undefined : edgeWidth
+        };
+        return React.createElement(_$$_REQUIRE(_dependencyMap[13], "../handlers/gestureHandlers").PanGestureHandler, {
+          ref: this.setPanGestureRef,
+          hitSlop: hitSlop,
+          activeOffsetX: gestureOrientation * minSwipeDistance,
+          failOffsetY: [-15, 15],
+          onGestureEvent: this.onGestureEvent,
+          onHandlerStateChange: this.openingHandlerStateChange,
+          enableTrackpadTwoFingerGesture: this.props.enableTrackpadTwoFingerGesture,
+          enabled: drawerLockMode !== 'locked-closed' && drawerLockMode !== 'locked-open',
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 580,
+            columnNumber: 7
+          }
+        }, this.renderDrawer());
+      }
+    }]);
+    return DrawerLayout;
+  }(React.Component);
+
+  exports.default = DrawerLayout;
+  DrawerLayout.defaultProps = {
+    drawerWidth: 200,
+    drawerPosition: 'left',
+    useNativeAnimations: true,
+    drawerType: 'front',
+    edgeWidth: 20,
+    minSwipeDistance: 3,
+    overlayColor: 'rgba(0, 0, 0, 0.7)',
+    drawerLockMode: 'unlocked',
+    enableTrackpadTwoFingerGesture: false
+  };
+  DrawerLayout.positions = {
+    Left: 'left',
+    Right: 'right'
+  };
+
+  var styles = _reactNative.StyleSheet.create({
+    drawerContainer: (0, _extends2.default)({}, _reactNative.StyleSheet.absoluteFillObject, {
+      zIndex: 1001,
+      flexDirection: 'row'
+    }),
+    containerInFront: (0, _extends2.default)({}, _reactNative.StyleSheet.absoluteFillObject, {
+      zIndex: 1002
+    }),
+    containerOnBack: (0, _extends2.default)({}, _reactNative.StyleSheet.absoluteFillObject),
+    main: {
+      flex: 1,
+      zIndex: 0,
+      overflow: 'hidden'
+    },
+    overlay: (0, _extends2.default)({}, _reactNative.StyleSheet.absoluteFillObject, {
+      zIndex: 1000
+    })
+  });
+},521,[3,31,5,6,14,10,12,9,22,45,20,1,511,512],"node_modules/react-native-gesture-handler/src/components/DrawerLayout.tsx");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = createHandler;
+
+  var _toConsumableArray2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/toConsumableArray"));
+
+  var _classCallCheck2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/classCallCheck"));
+
+  var _createClass2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/createClass"));
+
+  var _inherits2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/inherits"));
+
+  var _possibleConstructorReturn2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/possibleConstructorReturn"));
+
+  var _getPrototypeOf2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/getPrototypeOf"));
+
+  var _defineProperty2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[7], "@babel/runtime/helpers/defineProperty"));
+
+  var _extends2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[8], "@babel/runtime/helpers/extends"));
+
+  var React = _$$_REQUIRE(_dependencyMap[9], "@babel/runtime/helpers/interopRequireWildcard")(_$$_REQUIRE(_dependencyMap[10], "react"));
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[11], "react-native");
+
+  var _areEqual = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[12], "fbjs/lib/areEqual"));
+
+  var _RNGestureHandlerModule = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[13], "../RNGestureHandlerModule"));
+
+  var _UIManager$getViewMan, _stateToPropMappings;
+
+  function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2.default)(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2.default)(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2.default)(this, result); }; }
+
+  function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+  function findNodeHandle(node) {
+    if (_reactNative.Platform.OS === 'web') return node;
+    return (0, _reactNative.findNodeHandle)(node);
+  }
+
+  var _NativeModules$UIMana = _reactNative.NativeModules.UIManager,
+      UIManager = _NativeModules$UIMana === void 0 ? {} : _NativeModules$UIMana;
+  var customGHEventsConfig = {
+    onGestureHandlerEvent: {
+      registrationName: 'onGestureHandlerEvent'
+    },
+    onGestureHandlerStateChange: {
+      registrationName: 'onGestureHandlerStateChange'
+    }
+  };
+  UIManager.genericDirectEventTypes = (0, _extends2.default)({}, UIManager.genericDirectEventTypes, customGHEventsConfig);
+  var UIManagerConstants = (_UIManager$getViewMan = UIManager.getViewManagerConfig == null ? void 0 : UIManager.getViewManagerConfig('getConstants')) != null ? _UIManager$getViewMan : UIManager.getConstants == null ? void 0 : UIManager.getConstants();
+
+  if (UIManagerConstants) {
+    UIManagerConstants.genericDirectEventTypes = (0, _extends2.default)({}, UIManagerConstants.genericDirectEventTypes, customGHEventsConfig);
+  }
+
+  var _UIManager$setJSRespo = UIManager.setJSResponder,
+      oldSetJSResponder = _UIManager$setJSRespo === void 0 ? function () {} : _UIManager$setJSRespo,
+      _UIManager$clearJSRes = UIManager.clearJSResponder,
+      oldClearJSResponder = _UIManager$clearJSRes === void 0 ? function () {} : _UIManager$clearJSRes;
+
+  UIManager.setJSResponder = function (tag, blockNativeResponder) {
+    _RNGestureHandlerModule.default.handleSetJSResponder(tag, blockNativeResponder);
+
+    oldSetJSResponder(tag, blockNativeResponder);
+  };
+
+  UIManager.clearJSResponder = function () {
+    _RNGestureHandlerModule.default.handleClearJSResponder();
+
+    oldClearJSResponder();
+  };
+
+  var handlerTag = 1;
+  var handlerIDToTag = {};
+
+  function isConfigParam(param, name) {
+    return param !== undefined && (param !== Object(param) || !('__isNative' in param)) && name !== 'onHandlerStateChange' && name !== 'onGestureEvent';
+  }
+
+  function filterConfig(props, validProps) {
+    var defaults = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+    var res = (0, _extends2.default)({}, defaults);
+    validProps.forEach(function (key) {
+      var value = props[key];
+
+      if (isConfigParam(value, key)) {
+        var _value = props[key];
+
+        if (key === 'simultaneousHandlers' || key === 'waitFor') {
+          _value = transformIntoHandlerTags(props[key]);
+        } else if (key === 'hitSlop') {
+          if (typeof _value !== 'object') {
+            _value = {
+              top: _value,
+              left: _value,
+              bottom: _value,
+              right: _value
+            };
+          }
+        }
+
+        res[key] = _value;
+      }
+    });
+    return res;
+  }
+
+  function transformIntoHandlerTags(handlerIDs) {
+    if (!Array.isArray(handlerIDs)) {
+      handlerIDs = [handlerIDs];
+    }
+
+    if (_reactNative.Platform.OS === 'web') {
+      return handlerIDs.map(function (_ref) {
+        var current = _ref.current;
+        return current;
+      }).filter(function (handle) {
+        return handle;
+      });
+    }
+
+    return handlerIDs.map(function (handlerID) {
+      var _handlerID$current;
+
+      return handlerIDToTag[handlerID] || ((_handlerID$current = handlerID.current) == null ? void 0 : _handlerID$current.handlerTag) || -1;
+    }).filter(function (handlerTag) {
+      return handlerTag > 0;
+    });
+  }
+
+  function hasUnresolvedRefs(props) {
+    var extract = function extract(refs) {
+      if (!Array.isArray(refs)) {
+        return refs && refs.current === null;
+      }
+
+      return refs.some(function (r) {
+        return r && r.current === null;
+      });
+    };
+
+    return extract(props['simultaneousHandlers']) || extract(props['waitFor']);
+  }
+
+  var stateToPropMappings = (_stateToPropMappings = {}, (0, _defineProperty2.default)(_stateToPropMappings, _$$_REQUIRE(_dependencyMap[14], "../State").State.UNDETERMINED, undefined), (0, _defineProperty2.default)(_stateToPropMappings, _$$_REQUIRE(_dependencyMap[14], "../State").State.BEGAN, 'onBegan'), (0, _defineProperty2.default)(_stateToPropMappings, _$$_REQUIRE(_dependencyMap[14], "../State").State.FAILED, 'onFailed'), (0, _defineProperty2.default)(_stateToPropMappings, _$$_REQUIRE(_dependencyMap[14], "../State").State.CANCELLED, 'onCancelled'), (0, _defineProperty2.default)(_stateToPropMappings, _$$_REQUIRE(_dependencyMap[14], "../State").State.ACTIVE, 'onActivated'), (0, _defineProperty2.default)(_stateToPropMappings, _$$_REQUIRE(_dependencyMap[14], "../State").State.END, 'onEnded'), _stateToPropMappings);
+
+  function createHandler(_ref2) {
+    var name = _ref2.name,
+        _ref2$allowedProps = _ref2.allowedProps,
+        allowedProps = _ref2$allowedProps === void 0 ? [] : _ref2$allowedProps,
+        _ref2$config = _ref2.config,
+        config = _ref2$config === void 0 ? {} : _ref2$config,
+        transformProps = _ref2.transformProps,
+        _ref2$customNativePro = _ref2.customNativeProps,
+        customNativeProps = _ref2$customNativePro === void 0 ? [] : _ref2$customNativePro;
+
+    var Handler = function (_React$Component) {
+      (0, _inherits2.default)(Handler, _React$Component);
+
+      var _super = _createSuper(Handler);
+
+      function Handler(props) {
+        var _this;
+
+        (0, _classCallCheck2.default)(this, Handler);
+        _this = _super.call(this, props);
+        _this.updateEnqueued = null;
+
+        _this.onGestureHandlerEvent = function (event) {
+          if (event.nativeEvent.handlerTag === _this.handlerTag) {
+            _this.props.onGestureEvent == null ? void 0 : _this.props.onGestureEvent(event);
+          } else {
+            _this.props.onGestureHandlerEvent == null ? void 0 : _this.props.onGestureHandlerEvent(event);
+          }
+        };
+
+        _this.onGestureHandlerStateChange = function (event) {
+          if (event.nativeEvent.handlerTag === _this.handlerTag) {
+            _this.props.onHandlerStateChange == null ? void 0 : _this.props.onHandlerStateChange(event);
+            var state = event.nativeEvent.state;
+            var stateEventName = stateToPropMappings[state];
+            var eventHandler = stateEventName && _this.props[stateEventName];
+
+            if (eventHandler && typeof eventHandler === 'function') {
+              eventHandler(event);
+            }
+          } else {
+            _this.props.onGestureHandlerStateChange == null ? void 0 : _this.props.onGestureHandlerStateChange(event);
+          }
+        };
+
+        _this.refHandler = function (node) {
+          _this.viewNode = node;
+          var child = React.Children.only(_this.props.children);
+          var ref = child.ref;
+
+          if (ref !== null) {
+            if (typeof ref === 'function') {
+              ref(node);
+            } else {
+              ref.current = node;
+            }
+          }
+        };
+
+        _this.createGestureHandler = function (newConfig) {
+          _this.config = newConfig;
+
+          _RNGestureHandlerModule.default.createGestureHandler(name, _this.handlerTag, newConfig);
+        };
+
+        _this.attachGestureHandler = function (newViewTag) {
+          _this.viewTag = newViewTag;
+
+          if (_reactNative.Platform.OS === 'web') {
+            _RNGestureHandlerModule.default.attachGestureHandler(_this.handlerTag, newViewTag, _this.propsRef);
+          } else {
+            _RNGestureHandlerModule.default.attachGestureHandler(_this.handlerTag, newViewTag);
+          }
+        };
+
+        _this.updateGestureHandler = function (newConfig) {
+          _this.config = newConfig;
+
+          _RNGestureHandlerModule.default.updateGestureHandler(_this.handlerTag, newConfig);
+        };
+
+        _this.handlerTag = handlerTag++;
+        _this.config = {};
+        _this.propsRef = React.createRef();
+
+        if (props.id) {
+          if (handlerIDToTag[props.id] !== undefined) {
+            throw new Error("Handler with ID \"" + props.id + "\" already registered");
+          }
+
+          handlerIDToTag[props.id] = _this.handlerTag;
+        }
+
+        return _this;
+      }
+
+      (0, _createClass2.default)(Handler, [{
+        key: "componentDidMount",
+        value: function componentDidMount() {
+          var _this2 = this;
+
+          var props = this.props;
+
+          if (hasUnresolvedRefs(props)) {
+            this.updateEnqueued = setImmediate(function () {
+              _this2.updateEnqueued = null;
+
+              _this2.update();
+            });
+          }
+
+          this.createGestureHandler(filterConfig(transformProps ? transformProps(this.props) : this.props, [].concat((0, _toConsumableArray2.default)(allowedProps), (0, _toConsumableArray2.default)(customNativeProps)), config));
+          this.attachGestureHandler(findNodeHandle(this.viewNode));
+        }
+      }, {
+        key: "componentDidUpdate",
+        value: function componentDidUpdate() {
+          var viewTag = findNodeHandle(this.viewNode);
+
+          if (this.viewTag !== viewTag) {
+            this.attachGestureHandler(viewTag);
+          }
+
+          this.update();
+        }
+      }, {
+        key: "componentWillUnmount",
+        value: function componentWillUnmount() {
+          _RNGestureHandlerModule.default.dropGestureHandler(this.handlerTag);
+
+          if (this.updateEnqueued) {
+            clearImmediate(this.updateEnqueued);
+          }
+
+          var handlerID = this.props.id;
+
+          if (handlerID) {
+            delete handlerIDToTag[handlerID];
+          }
+        }
+      }, {
+        key: "update",
+        value: function update() {
+          var newConfig = filterConfig(transformProps ? transformProps(this.props) : this.props, [].concat((0, _toConsumableArray2.default)(allowedProps), (0, _toConsumableArray2.default)(customNativeProps)), config);
+
+          if (!(0, _areEqual.default)(this.config, newConfig)) {
+            this.updateGestureHandler(newConfig);
+          }
+        }
+      }, {
+        key: "setNativeProps",
+        value: function setNativeProps(updates) {
+          var mergedProps = (0, _extends2.default)({}, this.props, updates);
+          var newConfig = filterConfig(transformProps ? transformProps(mergedProps) : mergedProps, [].concat((0, _toConsumableArray2.default)(allowedProps), (0, _toConsumableArray2.default)(customNativeProps)), config);
+          this.updateGestureHandler(newConfig);
+        }
+      }, {
+        key: "render",
+        value: function render() {
+          var gestureEventHandler = this.onGestureHandlerEvent;
+          var _this$props = this.props,
+              onGestureEvent = _this$props.onGestureEvent,
+              onGestureHandlerEvent = _this$props.onGestureHandlerEvent;
+
+          if (onGestureEvent && typeof onGestureEvent !== 'function') {
+            if (onGestureHandlerEvent) {
+              throw new Error('Nesting touch handlers with native animated driver is not supported yet');
+            }
+
+            gestureEventHandler = onGestureEvent;
+          } else {
+            if (onGestureHandlerEvent && typeof onGestureHandlerEvent !== 'function') {
+              throw new Error('Nesting touch handlers with native animated driver is not supported yet');
+            }
+          }
+
+          var gestureStateEventHandler = this.onGestureHandlerStateChange;
+          var _this$props2 = this.props,
+              onHandlerStateChange = _this$props2.onHandlerStateChange,
+              onGestureHandlerStateChange = _this$props2.onGestureHandlerStateChange;
+
+          if (onHandlerStateChange && typeof onHandlerStateChange !== 'function') {
+            if (onGestureHandlerStateChange) {
+              throw new Error('Nesting touch handlers with native animated driver is not supported yet');
+            }
+
+            gestureStateEventHandler = onHandlerStateChange;
+          } else {
+            if (onGestureHandlerStateChange && typeof onGestureHandlerStateChange !== 'function') {
+              throw new Error('Nesting touch handlers with native animated driver is not supported yet');
+            }
+          }
+
+          var events = {
+            onGestureHandlerEvent: gestureEventHandler,
+            onGestureHandlerStateChange: gestureStateEventHandler
+          };
+          this.propsRef.current = events;
+          var child = React.Children.only(this.props.children);
+          var grandChildren = child.props.children;
+
+          if (_reactNative.Touchable.TOUCH_TARGET_DEBUG && child.type && (child.type === 'RNGestureHandlerButton' || child.type.name === 'View' || child.type.displayName === 'View')) {
+            grandChildren = React.Children.toArray(grandChildren);
+            grandChildren.push(_reactNative.Touchable.renderDebugView({
+              color: 'mediumspringgreen',
+              hitSlop: child.props.hitSlop
+            }));
+          }
+
+          return React.cloneElement(child, (0, _extends2.default)({
+            ref: this.refHandler,
+            collapsable: false
+          }, events), grandChildren);
+        }
+      }]);
+      return Handler;
+    }(React.Component);
+
+    Handler.displayName = name;
+    return Handler;
+  }
+},522,[3,39,5,6,10,12,9,309,31,22,45,1,531,532,511],"node_modules/react-native-gesture-handler/src/handlers/createHandler.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = exports.TOUCHABLE_STATE = void 0;
+
+  var _extends2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/extends"));
+
+  var _classCallCheck2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/classCallCheck"));
+
+  var _createClass2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/createClass"));
+
+  var _inherits2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/inherits"));
+
+  var _possibleConstructorReturn2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/possibleConstructorReturn"));
+
+  var _getPrototypeOf2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/getPrototypeOf"));
+
+  var React = _$$_REQUIRE(_dependencyMap[7], "@babel/runtime/helpers/interopRequireWildcard")(_$$_REQUIRE(_dependencyMap[8], "react"));
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[9], "react-native");
+
+  var _jsxFileName = "/Users/jevon/Documents/Carriage/node_modules/react-native-gesture-handler/src/components/touchables/GenericTouchable.tsx";
+
+  function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2.default)(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2.default)(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2.default)(this, result); }; }
+
+  function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+  var TOUCHABLE_STATE = {
+    UNDETERMINED: 0,
+    BEGAN: 1,
+    MOVED_OUTSIDE: 2
+  };
+  exports.TOUCHABLE_STATE = TOUCHABLE_STATE;
+
+  var GenericTouchable = function (_Component) {
+    (0, _inherits2.default)(GenericTouchable, _Component);
+
+    var _super = _createSuper(GenericTouchable);
+
+    function GenericTouchable() {
+      var _this;
+
+      (0, _classCallCheck2.default)(this, GenericTouchable);
+
+      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments[_key];
+      }
+
+      _this = _super.call.apply(_super, [this].concat(args));
+      _this.longPressDetected = false;
+      _this.pointerInside = true;
+      _this.STATE = TOUCHABLE_STATE.UNDETERMINED;
+
+      _this.onGestureEvent = function (_ref) {
+        var pointerInside = _ref.nativeEvent.pointerInside;
+
+        if (_this.pointerInside !== pointerInside) {
+          if (pointerInside) {
+            _this.onMoveIn();
+          } else {
+            _this.onMoveOut();
+          }
+        }
+
+        _this.pointerInside = pointerInside;
+      };
+
+      _this.onHandlerStateChange = function (_ref2) {
+        var nativeEvent = _ref2.nativeEvent;
+        var state = nativeEvent.state;
+
+        if (state === _$$_REQUIRE(_dependencyMap[10], "../../State").State.CANCELLED || state === _$$_REQUIRE(_dependencyMap[10], "../../State").State.FAILED) {
+          _this.moveToState(TOUCHABLE_STATE.UNDETERMINED);
+        } else if (state === (_reactNative.Platform.OS !== 'android' ? _$$_REQUIRE(_dependencyMap[10], "../../State").State.ACTIVE : _$$_REQUIRE(_dependencyMap[10], "../../State").State.BEGAN) && _this.STATE === TOUCHABLE_STATE.UNDETERMINED) {
+          _this.handlePressIn();
+        } else if (state === _$$_REQUIRE(_dependencyMap[10], "../../State").State.END) {
+          var shouldCallOnPress = !_this.longPressDetected && _this.STATE !== TOUCHABLE_STATE.MOVED_OUTSIDE && _this.pressOutTimeout === null;
+
+          _this.handleGoToUndetermined();
+
+          if (shouldCallOnPress) {
+            _this.props.onPress == null ? void 0 : _this.props.onPress();
+          }
+        }
+      };
+
+      _this.onLongPressDetected = function () {
+        _this.longPressDetected = true;
+        _this.props.onLongPress == null ? void 0 : _this.props.onLongPress();
+      };
+
+      return _this;
+    }
+
+    (0, _createClass2.default)(GenericTouchable, [{
+      key: "handlePressIn",
+      value: function handlePressIn() {
+        var _this2 = this;
+
+        if (this.props.delayPressIn) {
+          this.pressInTimeout = setTimeout(function () {
+            _this2.moveToState(TOUCHABLE_STATE.BEGAN);
+
+            _this2.pressInTimeout = null;
+          }, this.props.delayPressIn);
+        } else {
+          this.moveToState(TOUCHABLE_STATE.BEGAN);
+        }
+
+        if (this.props.onLongPress) {
+          var time = (this.props.delayPressIn || 0) + (this.props.delayLongPress || 0);
+          this.longPressTimeout = setTimeout(this.onLongPressDetected, time);
+        }
+      }
+    }, {
+      key: "handleMoveOutside",
+      value: function handleMoveOutside() {
+        var _this3 = this;
+
+        if (this.props.delayPressOut) {
+          this.pressOutTimeout = this.pressOutTimeout || setTimeout(function () {
+            _this3.moveToState(TOUCHABLE_STATE.MOVED_OUTSIDE);
+
+            _this3.pressOutTimeout = null;
+          }, this.props.delayPressOut);
+        } else {
+          this.moveToState(TOUCHABLE_STATE.MOVED_OUTSIDE);
+        }
+      }
+    }, {
+      key: "handleGoToUndetermined",
+      value: function handleGoToUndetermined() {
+        var _this4 = this;
+
+        clearTimeout(this.pressOutTimeout);
+
+        if (this.props.delayPressOut) {
+          this.pressOutTimeout = setTimeout(function () {
+            if (_this4.STATE === TOUCHABLE_STATE.UNDETERMINED) {
+              _this4.moveToState(TOUCHABLE_STATE.BEGAN);
+            }
+
+            _this4.moveToState(TOUCHABLE_STATE.UNDETERMINED);
+
+            _this4.pressOutTimeout = null;
+          }, this.props.delayPressOut);
+        } else {
+          if (this.STATE === TOUCHABLE_STATE.UNDETERMINED) {
+            this.moveToState(TOUCHABLE_STATE.BEGAN);
+          }
+
+          this.moveToState(TOUCHABLE_STATE.UNDETERMINED);
+        }
+      }
+    }, {
+      key: "componentDidMount",
+      value: function componentDidMount() {
+        this.reset();
+      }
+    }, {
+      key: "reset",
+      value: function reset() {
+        this.longPressDetected = false;
+        this.pointerInside = true;
+        clearTimeout(this.pressInTimeout);
+        clearTimeout(this.pressOutTimeout);
+        clearTimeout(this.longPressTimeout);
+        this.pressOutTimeout = null;
+        this.longPressTimeout = null;
+        this.pressInTimeout = null;
+      }
+    }, {
+      key: "moveToState",
+      value: function moveToState(newState) {
+        var _this$props$onStateCh, _this$props4;
+
+        if (newState === this.STATE) {
+          return;
+        }
+
+        if (newState === TOUCHABLE_STATE.BEGAN) {
+          var _this$props$onPressIn, _this$props;
+
+          (_this$props$onPressIn = (_this$props = this.props).onPressIn) == null ? void 0 : _this$props$onPressIn.call(_this$props);
+        } else if (newState === TOUCHABLE_STATE.MOVED_OUTSIDE) {
+          var _this$props$onPressOu, _this$props2;
+
+          (_this$props$onPressOu = (_this$props2 = this.props).onPressOut) == null ? void 0 : _this$props$onPressOu.call(_this$props2);
+        } else if (newState === TOUCHABLE_STATE.UNDETERMINED) {
+          this.reset();
+
+          if (this.STATE === TOUCHABLE_STATE.BEGAN) {
+            var _this$props$onPressOu2, _this$props3;
+
+            (_this$props$onPressOu2 = (_this$props3 = this.props).onPressOut) == null ? void 0 : _this$props$onPressOu2.call(_this$props3);
+          }
+        }
+
+        (_this$props$onStateCh = (_this$props4 = this.props).onStateChange) == null ? void 0 : _this$props$onStateCh.call(_this$props4, this.STATE, newState);
+        this.STATE = newState;
+      }
+    }, {
+      key: "componentWillUnmount",
+      value: function componentWillUnmount() {
+        this.reset();
+      }
+    }, {
+      key: "onMoveIn",
+      value: function onMoveIn() {
+        if (this.STATE === TOUCHABLE_STATE.MOVED_OUTSIDE) {
+          this.moveToState(TOUCHABLE_STATE.BEGAN);
+        }
+      }
+    }, {
+      key: "onMoveOut",
+      value: function onMoveOut() {
+        clearTimeout(this.longPressTimeout);
+        this.longPressTimeout = null;
+
+        if (this.STATE === TOUCHABLE_STATE.BEGAN) {
+          this.handleMoveOutside();
+        }
+      }
+    }, {
+      key: "render",
+      value: function render() {
+        var coreProps = {
+          accessible: this.props.accessible !== false,
+          accessibilityLabel: this.props.accessibilityLabel,
+          accessibilityHint: this.props.accessibilityHint,
+          accessibilityRole: this.props.accessibilityRole,
+          accessibilityState: this.props.accessibilityState,
+          nativeID: this.props.nativeID,
+          onLayout: this.props.onLayout,
+          hitSlop: this.props.hitSlop
+        };
+        return React.createElement(_$$_REQUIRE(_dependencyMap[11], "../GestureButtons").BaseButton, (0, _extends2.default)({
+          style: this.props.containerStyle,
+          onHandlerStateChange: this.props.disabled ? undefined : this.onHandlerStateChange,
+          onGestureEvent: this.onGestureEvent,
+          hitSlop: this.props.hitSlop,
+          shouldActivateOnStart: this.props.shouldActivateOnStart,
+          disallowInterruption: this.props.disallowInterruption,
+          testID: this.props.testID
+        }, this.props.extraButtonProps, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 266,
+            columnNumber: 7
+          }
+        }), React.createElement(_reactNative.Animated.View, (0, _extends2.default)({}, coreProps, {
+          style: this.props.style,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 278,
+            columnNumber: 9
+          }
+        }), this.props.children));
+      }
+    }]);
+    return GenericTouchable;
+  }(React.Component);
+
+  exports.default = GenericTouchable;
+  GenericTouchable.defaultProps = {
+    delayLongPress: 600,
+    extraButtonProps: {
+      rippleColor: 'transparent'
+    }
+  };
+},523,[3,31,5,6,10,12,9,22,45,1,511,514],"node_modules/react-native-gesture-handler/src/components/touchables/GenericTouchable.tsx");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _extends2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/extends"));
+
+  var React = _$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/interopRequireWildcard")(_$$_REQUIRE(_dependencyMap[3], "react"));
+
+  var _GenericTouchable = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "./GenericTouchable"));
+
+  var _this = this,
+      _jsxFileName = "/Users/jevon/Documents/Carriage/node_modules/react-native-gesture-handler/src/components/touchables/TouchableWithoutFeedback.tsx";
+
+  var TouchableWithoutFeedback = React.forwardRef(function (props, ref) {
+    return React.createElement(_GenericTouchable.default, (0, _extends2.default)({
+      ref: ref
+    }, props, {
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 8,
+        columnNumber: 19
+      }
+    }));
+  });
+  TouchableWithoutFeedback.defaultProps = _GenericTouchable.default.defaultProps;
+  var _default = TouchableWithoutFeedback;
+  exports.default = _default;
+},524,[3,31,22,45,523],"node_modules/react-native-gesture-handler/src/components/touchables/TouchableWithoutFeedback.tsx");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _extends2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/extends"));
+
+  var _objectWithoutProperties2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/objectWithoutProperties"));
+
+  var _classCallCheck2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/classCallCheck"));
+
+  var _createClass2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/createClass"));
+
+  var _inherits2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/inherits"));
+
+  var _possibleConstructorReturn2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/possibleConstructorReturn"));
+
+  var _getPrototypeOf2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[7], "@babel/runtime/helpers/getPrototypeOf"));
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[8], "react-native");
+
+  var _GenericTouchable = _$$_REQUIRE(_dependencyMap[9], "@babel/runtime/helpers/interopRequireWildcard")(_$$_REQUIRE(_dependencyMap[10], "./GenericTouchable"));
+
+  var React = _$$_REQUIRE(_dependencyMap[9], "@babel/runtime/helpers/interopRequireWildcard")(_$$_REQUIRE(_dependencyMap[11], "react"));
+
+  var _jsxFileName = "/Users/jevon/Documents/Carriage/node_modules/react-native-gesture-handler/src/components/touchables/TouchableOpacity.tsx";
+
+  function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2.default)(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2.default)(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2.default)(this, result); }; }
+
+  function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+  var TouchableOpacity = function (_Component) {
+    (0, _inherits2.default)(TouchableOpacity, _Component);
+
+    var _super = _createSuper(TouchableOpacity);
+
+    function TouchableOpacity() {
+      var _this;
+
+      (0, _classCallCheck2.default)(this, TouchableOpacity);
+
+      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments[_key];
+      }
+
+      _this = _super.call.apply(_super, [this].concat(args));
+
+      _this.getChildStyleOpacityWithDefault = function () {
+        var childStyle = _reactNative.StyleSheet.flatten(_this.props.style) || {};
+        return childStyle.opacity == null ? 1 : childStyle.opacity;
+      };
+
+      _this.opacity = new _reactNative.Animated.Value(_this.getChildStyleOpacityWithDefault());
+
+      _this.setOpacityTo = function (value, duration) {
+        _reactNative.Animated.timing(_this.opacity, {
+          toValue: value,
+          duration: duration,
+          easing: _reactNative.Easing.inOut(_reactNative.Easing.quad),
+          useNativeDriver: true
+        }).start();
+      };
+
+      _this.onStateChange = function (_from, to) {
+        if (to === _GenericTouchable.TOUCHABLE_STATE.BEGAN) {
+          _this.setOpacityTo(_this.props.activeOpacity, 0);
+        } else if (to === _GenericTouchable.TOUCHABLE_STATE.UNDETERMINED || to === _GenericTouchable.TOUCHABLE_STATE.MOVED_OUTSIDE) {
+          _this.setOpacityTo(_this.getChildStyleOpacityWithDefault(), 150);
+        }
+      };
+
+      return _this;
+    }
+
+    (0, _createClass2.default)(TouchableOpacity, [{
+      key: "render",
+      value: function render() {
+        var _this$props = this.props,
+            _this$props$style = _this$props.style,
+            style = _this$props$style === void 0 ? {} : _this$props$style,
+            rest = (0, _objectWithoutProperties2.default)(_this$props, ["style"]);
+        return React.createElement(_GenericTouchable.default, (0, _extends2.default)({}, rest, {
+          style: [style, {
+            opacity: this.opacity
+          }],
+          onStateChange: this.onStateChange,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 57,
+            columnNumber: 7
+          }
+        }), this.props.children ? this.props.children : React.createElement(_reactNative.View, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 66,
+            columnNumber: 54
+          }
+        }));
+      }
+    }]);
+    return TouchableOpacity;
+  }(React.Component);
+
+  exports.default = TouchableOpacity;
+  TouchableOpacity.defaultProps = (0, _extends2.default)({}, _GenericTouchable.default.defaultProps, {
+    activeOpacity: 0.2
+  });
+},525,[3,31,137,5,6,10,12,9,1,22,523,45],"node_modules/react-native-gesture-handler/src/components/touchables/TouchableOpacity.tsx");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _extends2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[1], "@babel/runtime/helpers/extends"));
+
+  var _objectWithoutProperties2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[2], "@babel/runtime/helpers/objectWithoutProperties"));
+
+  var _classCallCheck2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[3], "@babel/runtime/helpers/classCallCheck"));
+
+  var _createClass2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[4], "@babel/runtime/helpers/createClass"));
+
+  var _inherits2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[5], "@babel/runtime/helpers/inherits"));
+
+  var _possibleConstructorReturn2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[6], "@babel/runtime/helpers/possibleConstructorReturn"));
+
+  var _getPrototypeOf2 = _$$_REQUIRE(_dependencyMap[0], "@babel/runtime/helpers/interopRequireDefault")(_$$_REQUIRE(_dependencyMap[7], "@babel/runtime/helpers/getPrototypeOf"));
+
+  var React = _$$_REQUIRE(_dependencyMap[8], "@babel/runtime/helpers/interopRequireWildcard")(_$$_REQUIRE(_dependencyMap[9], "react"));
+
+  var _GenericTouchable = _$$_REQUIRE(_dependencyMap[8], "@babel/runtime/helpers/interopRequireWildcard")(_$$_REQUIRE(_dependencyMap[10], "./GenericTouchable"));
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[11], "react-native");
+
+  var _jsxFileName = "/Users/jevon/Documents/Carriage/node_modules/react-native-gesture-handler/src/components/touchables/TouchableHighlight.tsx";
+
+  function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2.default)(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2.default)(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2.default)(this, result); }; }
+
+  function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+  var TouchableHighlight = function (_Component) {
+    (0, _inherits2.default)(TouchableHighlight, _Component);
+
+    var _super = _createSuper(TouchableHighlight);
+
+    function TouchableHighlight(props) {
+      var _this;
+
+      (0, _classCallCheck2.default)(this, TouchableHighlight);
+      _this = _super.call(this, props);
+
+      _this.showUnderlay = function () {
+        if (!_this.hasPressHandler()) {
+          return;
+        }
+
+        _this.setState({
+          extraChildStyle: {
+            opacity: _this.props.activeOpacity
+          },
+          extraUnderlayStyle: {
+            backgroundColor: _this.props.underlayColor
+          }
+        });
+
+        _this.props.onShowUnderlay == null ? void 0 : _this.props.onShowUnderlay();
+      };
+
+      _this.hasPressHandler = function () {
+        return _this.props.onPress || _this.props.onPressIn || _this.props.onPressOut || _this.props.onLongPress;
+      };
+
+      _this.hideUnderlay = function () {
+        _this.setState({
+          extraChildStyle: null,
+          extraUnderlayStyle: null
+        });
+
+        _this.props.onHideUnderlay == null ? void 0 : _this.props.onHideUnderlay();
+      };
+
+      _this.onStateChange = function (_from, to) {
+        if (to === _GenericTouchable.TOUCHABLE_STATE.BEGAN) {
+          _this.showUnderlay();
+        } else if (to === _GenericTouchable.TOUCHABLE_STATE.UNDETERMINED || to === _GenericTouchable.TOUCHABLE_STATE.MOVED_OUTSIDE) {
+          _this.hideUnderlay();
+        }
+      };
+
+      _this.state = {
+        extraChildStyle: null,
+        extraUnderlayStyle: null
+      };
+      return _this;
+    }
+
+    (0, _createClass2.default)(TouchableHighlight, [{
+      key: "renderChildren",
+      value: function renderChildren() {
+        if (!this.props.children) {
+          return React.createElement(_reactNative.View, {
+            __self: this,
+            __source: {
+              fileName: _jsxFileName,
+              lineNumber: 78,
+              columnNumber: 14
+            }
+          });
+        }
+
+        var child = React.Children.only(this.props.children);
+        return React.cloneElement(child, {
+          style: _reactNative.StyleSheet.compose(child.props.style, this.state.extraChildStyle)
+        });
+      }
+    }, {
+      key: "render",
+      value: function render() {
+        var _this$props = this.props,
+            _this$props$style = _this$props.style,
+            style = _this$props$style === void 0 ? {} : _this$props$style,
+            rest = (0, _objectWithoutProperties2.default)(_this$props, ["style"]);
+        var extraUnderlayStyle = this.state.extraUnderlayStyle;
+        return React.createElement(_GenericTouchable.default, (0, _extends2.default)({}, rest, {
+          style: [style, extraUnderlayStyle],
+          onStateChange: this.onStateChange,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 104,
+            columnNumber: 7
+          }
+        }), this.renderChildren());
+      }
+    }]);
+    return TouchableHighlight;
+  }(React.Component);
+
+  exports.default = TouchableHighlight;
+  TouchableHighlight.defaultProps = (0, _extends2.default)({}, _GenericTouchable.default.defaultProps, {
+    activeOpacity: 0.85,
+    delayPressOut: 100,
+    underlayColor: 'black'
+  });
+},526,[3,31,137,5,6,10,12,9,22,45,523,1],"node_modules/react-native-gesture-handler/src/components/touchables/TouchableHighlight.tsx");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[0], "react-native");
+
+  var _NativeModules$Platfo;
+
+  var _default = (_NativeModules$Platfo = _reactNative.NativeModules == null ? void 0 : _reactNative.NativeModules.PlatformConstants) != null ? _NativeModules$Platfo : _reactNative.Platform.constants;
+
+  exports.default = _default;
+},527,[1],"node_modules/react-native-gesture-handler/src/PlatformConstants.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[0], "react-native");
+
+  var RNGestureHandlerButton = (0, _reactNative.requireNativeComponent)('RNGestureHandlerButton');
+  var _default = RNGestureHandlerButton;
+  exports.default = _default;
+},528,[1],"node_modules/react-native-gesture-handler/src/components/GestureHandlerButton.tsx");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[0], "react-native");
+
+  var _default = _reactNative.TouchableNativeFeedback;
+  exports.default = _default;
+},529,[1],"node_modules/react-native-gesture-handler/src/components/touchables/TouchableNativeFeedback.tsx");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  'use strict';
+
+  var REACT_STATICS = {
+    childContextTypes: true,
+    contextType: true,
+    contextTypes: true,
+    defaultProps: true,
+    displayName: true,
+    getDefaultProps: true,
+    getDerivedStateFromError: true,
+    getDerivedStateFromProps: true,
+    mixins: true,
+    propTypes: true,
+    type: true
+  };
+  var KNOWN_STATICS = {
+    name: true,
+    length: true,
+    prototype: true,
+    caller: true,
+    callee: true,
+    arguments: true,
+    arity: true
+  };
+  var FORWARD_REF_STATICS = {
+    '$$typeof': true,
+    render: true,
+    defaultProps: true,
+    displayName: true,
+    propTypes: true
+  };
+  var MEMO_STATICS = {
+    '$$typeof': true,
+    compare: true,
+    defaultProps: true,
+    displayName: true,
+    propTypes: true,
+    type: true
+  };
+  var TYPE_STATICS = {};
+  TYPE_STATICS[_$$_REQUIRE(_dependencyMap[0], "react-is").ForwardRef] = FORWARD_REF_STATICS;
+  TYPE_STATICS[_$$_REQUIRE(_dependencyMap[0], "react-is").Memo] = MEMO_STATICS;
+
+  function getStatics(component) {
+    if (_$$_REQUIRE(_dependencyMap[0], "react-is").isMemo(component)) {
+      return MEMO_STATICS;
+    }
+
+    return TYPE_STATICS[component['$$typeof']] || REACT_STATICS;
+  }
+
+  var defineProperty = Object.defineProperty;
+  var getOwnPropertyNames = Object.getOwnPropertyNames;
+  var getOwnPropertySymbols = Object.getOwnPropertySymbols;
+  var getOwnPropertyDescriptor = Object.getOwnPropertyDescriptor;
+  var getPrototypeOf = Object.getPrototypeOf;
+  var objectPrototype = Object.prototype;
+
+  function hoistNonReactStatics(targetComponent, sourceComponent, blacklist) {
+    if (typeof sourceComponent !== 'string') {
+      if (objectPrototype) {
+        var inheritedComponent = getPrototypeOf(sourceComponent);
+
+        if (inheritedComponent && inheritedComponent !== objectPrototype) {
+          hoistNonReactStatics(targetComponent, inheritedComponent, blacklist);
+        }
+      }
+
+      var keys = getOwnPropertyNames(sourceComponent);
+
+      if (getOwnPropertySymbols) {
+        keys = keys.concat(getOwnPropertySymbols(sourceComponent));
+      }
+
+      var targetStatics = getStatics(targetComponent);
+      var sourceStatics = getStatics(sourceComponent);
+
+      for (var i = 0; i < keys.length; ++i) {
+        var key = keys[i];
+
+        if (!KNOWN_STATICS[key] && !(blacklist && blacklist[key]) && !(sourceStatics && sourceStatics[key]) && !(targetStatics && targetStatics[key])) {
+          var descriptor = getOwnPropertyDescriptor(sourceComponent, key);
+
+          try {
+            defineProperty(targetComponent, key, descriptor);
+          } catch (e) {}
+        }
+      }
+    }
+
+    return targetComponent;
+  }
+
+  module.exports = hoistNonReactStatics;
+},530,[533],"node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  "use strict";
+
+  var aStackPool = [];
+  var bStackPool = [];
+  /**
+   * Checks if two values are equal. Values may be primitives, arrays, or objects.
+   * Returns true if both arguments have the same keys and values.
+   *
+   * @see http://underscorejs.org
+   * @copyright 2009-2013 Jeremy Ashkenas, DocumentCloud Inc.
+   * @license MIT
+   */
+
+  function areEqual(a, b) {
+    var aStack = aStackPool.length ? aStackPool.pop() : [];
+    var bStack = bStackPool.length ? bStackPool.pop() : [];
+    var result = eq(a, b, aStack, bStack);
+    aStack.length = 0;
+    bStack.length = 0;
+    aStackPool.push(aStack);
+    bStackPool.push(bStack);
+    return result;
+  }
+
+  function eq(a, b, aStack, bStack) {
+    if (a === b) {
+      return a !== 0 || 1 / a == 1 / b;
+    }
+
+    if (a == null || b == null) {
+      return false;
+    }
+
+    if (typeof a != 'object' || typeof b != 'object') {
+      return false;
+    }
+
+    var objToStr = Object.prototype.toString;
+    var className = objToStr.call(a);
+
+    if (className != objToStr.call(b)) {
+      return false;
+    }
+
+    switch (className) {
+      case '[object String]':
+        return a == String(b);
+
+      case '[object Number]':
+        return isNaN(a) || isNaN(b) ? false : a == Number(b);
+
+      case '[object Date]':
+      case '[object Boolean]':
+        return +a == +b;
+
+      case '[object RegExp]':
+        return a.source == b.source && a.global == b.global && a.multiline == b.multiline && a.ignoreCase == b.ignoreCase;
+    }
+
+    var length = aStack.length;
+
+    while (length--) {
+      if (aStack[length] == a) {
+        return bStack[length] == b;
+      }
+    }
+
+    aStack.push(a);
+    bStack.push(b);
+    var size = 0;
+
+    if (className === '[object Array]') {
+      size = a.length;
+
+      if (size !== b.length) {
+        return false;
+      }
+
+      while (size--) {
+        if (!eq(a[size], b[size], aStack, bStack)) {
+          return false;
+        }
+      }
+    } else {
+      if (a.constructor !== b.constructor) {
+        return false;
+      }
+
+      if (a.hasOwnProperty('valueOf') && b.hasOwnProperty('valueOf')) {
+        return a.valueOf() == b.valueOf();
+      }
+
+      var keys = Object.keys(a);
+
+      if (keys.length != Object.keys(b).length) {
+        return false;
+      }
+
+      for (var i = 0; i < keys.length; i++) {
+        if (!eq(a[keys[i]], b[keys[i]], aStack, bStack)) {
+          return false;
+        }
+      }
+    }
+
+    aStack.pop();
+    bStack.pop();
+    return true;
+  }
+
+  module.exports = areEqual;
+},531,[],"node_modules/fbjs/lib/areEqual.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = void 0;
+
+  var _reactNative = _$$_REQUIRE(_dependencyMap[0], "react-native");
+
+  var RNGestureHandlerModule = _reactNative.NativeModules.RNGestureHandlerModule;
+
+  if (RNGestureHandlerModule == null) {
+    console.error("react-native-gesture-handler module was not found. Make sure you're running your app on the native platform and your code is linked properly (cd ios && pod install && cd ..).\n\n    For installation instructions, please refer to https://docs.swmansion.com/react-native-gesture-handler/docs/#installation".split('\n').map(function (line) {
+      return line.trim();
+    }).join('\n'));
+  }
+
+  var _default = RNGestureHandlerModule;
+  exports.default = _default;
+},532,[1],"node_modules/react-native-gesture-handler/src/RNGestureHandlerModule.ts");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  'use strict';
+
+  if (process.env.NODE_ENV === 'production') {
+    module.exports = _$$_REQUIRE(_dependencyMap[0], "./cjs/react-is.production.min.js");
+  } else {
+    module.exports = _$$_REQUIRE(_dependencyMap[1], "./cjs/react-is.development.js");
+  }
+},533,[534,535],"node_modules/hoist-non-react-statics/node_modules/react-is/index.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  /** @license React v16.13.1
+   * react-is.production.min.js
+   *
+   * Copyright (c) Facebook, Inc. and its affiliates.
+   *
+   * This source code is licensed under the MIT license found in the
+   * LICENSE file in the root directory of this source tree.
+   */
+  'use strict';
+
+  var b = "function" === typeof Symbol && Symbol.for,
+      c = b ? Symbol.for("react.element") : 60103,
+      d = b ? Symbol.for("react.portal") : 60106,
+      e = b ? Symbol.for("react.fragment") : 60107,
+      f = b ? Symbol.for("react.strict_mode") : 60108,
+      g = b ? Symbol.for("react.profiler") : 60114,
+      h = b ? Symbol.for("react.provider") : 60109,
+      k = b ? Symbol.for("react.context") : 60110,
+      l = b ? Symbol.for("react.async_mode") : 60111,
+      m = b ? Symbol.for("react.concurrent_mode") : 60111,
+      n = b ? Symbol.for("react.forward_ref") : 60112,
+      p = b ? Symbol.for("react.suspense") : 60113,
+      q = b ? Symbol.for("react.suspense_list") : 60120,
+      r = b ? Symbol.for("react.memo") : 60115,
+      t = b ? Symbol.for("react.lazy") : 60116,
+      v = b ? Symbol.for("react.block") : 60121,
+      w = b ? Symbol.for("react.fundamental") : 60117,
+      x = b ? Symbol.for("react.responder") : 60118,
+      y = b ? Symbol.for("react.scope") : 60119;
+
+  function z(a) {
+    if ("object" === typeof a && null !== a) {
+      var u = a.$$typeof;
+
+      switch (u) {
+        case c:
+          switch (a = a.type, a) {
+            case l:
+            case m:
+            case e:
+            case g:
+            case f:
+            case p:
+              return a;
+
+            default:
+              switch (a = a && a.$$typeof, a) {
+                case k:
+                case n:
+                case t:
+                case r:
+                case h:
+                  return a;
+
+                default:
+                  return u;
+              }
+
+          }
+
+        case d:
+          return u;
+      }
+    }
+  }
+
+  function A(a) {
+    return z(a) === m;
+  }
+
+  exports.AsyncMode = l;
+  exports.ConcurrentMode = m;
+  exports.ContextConsumer = k;
+  exports.ContextProvider = h;
+  exports.Element = c;
+  exports.ForwardRef = n;
+  exports.Fragment = e;
+  exports.Lazy = t;
+  exports.Memo = r;
+  exports.Portal = d;
+  exports.Profiler = g;
+  exports.StrictMode = f;
+  exports.Suspense = p;
+
+  exports.isAsyncMode = function (a) {
+    return A(a) || z(a) === l;
+  };
+
+  exports.isConcurrentMode = A;
+
+  exports.isContextConsumer = function (a) {
+    return z(a) === k;
+  };
+
+  exports.isContextProvider = function (a) {
+    return z(a) === h;
+  };
+
+  exports.isElement = function (a) {
+    return "object" === typeof a && null !== a && a.$$typeof === c;
+  };
+
+  exports.isForwardRef = function (a) {
+    return z(a) === n;
+  };
+
+  exports.isFragment = function (a) {
+    return z(a) === e;
+  };
+
+  exports.isLazy = function (a) {
+    return z(a) === t;
+  };
+
+  exports.isMemo = function (a) {
+    return z(a) === r;
+  };
+
+  exports.isPortal = function (a) {
+    return z(a) === d;
+  };
+
+  exports.isProfiler = function (a) {
+    return z(a) === g;
+  };
+
+  exports.isStrictMode = function (a) {
+    return z(a) === f;
+  };
+
+  exports.isSuspense = function (a) {
+    return z(a) === p;
+  };
+
+  exports.isValidElementType = function (a) {
+    return "string" === typeof a || "function" === typeof a || a === e || a === m || a === g || a === f || a === p || a === q || "object" === typeof a && null !== a && (a.$$typeof === t || a.$$typeof === r || a.$$typeof === h || a.$$typeof === k || a.$$typeof === n || a.$$typeof === w || a.$$typeof === x || a.$$typeof === y || a.$$typeof === v);
+  };
+
+  exports.typeOf = z;
+},534,[],"node_modules/hoist-non-react-statics/node_modules/react-is/cjs/react-is.production.min.js");
+__d(function (global, _$$_REQUIRE, _$$_IMPORT_DEFAULT, _$$_IMPORT_ALL, module, exports, _dependencyMap) {
+  /** @license React v16.13.1
+   * react-is.development.js
+   *
+   * Copyright (c) Facebook, Inc. and its affiliates.
+   *
+   * This source code is licensed under the MIT license found in the
+   * LICENSE file in the root directory of this source tree.
+   */
+  'use strict';
+
+  if (process.env.NODE_ENV !== "production") {
+    (function () {
+      'use strict';
+
+      var hasSymbol = typeof Symbol === 'function' && Symbol.for;
+      var REACT_ELEMENT_TYPE = hasSymbol ? Symbol.for('react.element') : 0xeac7;
+      var REACT_PORTAL_TYPE = hasSymbol ? Symbol.for('react.portal') : 0xeaca;
+      var REACT_FRAGMENT_TYPE = hasSymbol ? Symbol.for('react.fragment') : 0xeacb;
+      var REACT_STRICT_MODE_TYPE = hasSymbol ? Symbol.for('react.strict_mode') : 0xeacc;
+      var REACT_PROFILER_TYPE = hasSymbol ? Symbol.for('react.profiler') : 0xead2;
+      var REACT_PROVIDER_TYPE = hasSymbol ? Symbol.for('react.provider') : 0xeacd;
+      var REACT_CONTEXT_TYPE = hasSymbol ? Symbol.for('react.context') : 0xeace;
+      var REACT_ASYNC_MODE_TYPE = hasSymbol ? Symbol.for('react.async_mode') : 0xeacf;
+      var REACT_CONCURRENT_MODE_TYPE = hasSymbol ? Symbol.for('react.concurrent_mode') : 0xeacf;
+      var REACT_FORWARD_REF_TYPE = hasSymbol ? Symbol.for('react.forward_ref') : 0xead0;
+      var REACT_SUSPENSE_TYPE = hasSymbol ? Symbol.for('react.suspense') : 0xead1;
+      var REACT_SUSPENSE_LIST_TYPE = hasSymbol ? Symbol.for('react.suspense_list') : 0xead8;
+      var REACT_MEMO_TYPE = hasSymbol ? Symbol.for('react.memo') : 0xead3;
+      var REACT_LAZY_TYPE = hasSymbol ? Symbol.for('react.lazy') : 0xead4;
+      var REACT_BLOCK_TYPE = hasSymbol ? Symbol.for('react.block') : 0xead9;
+      var REACT_FUNDAMENTAL_TYPE = hasSymbol ? Symbol.for('react.fundamental') : 0xead5;
+      var REACT_RESPONDER_TYPE = hasSymbol ? Symbol.for('react.responder') : 0xead6;
+      var REACT_SCOPE_TYPE = hasSymbol ? Symbol.for('react.scope') : 0xead7;
+
+      function isValidElementType(type) {
+        return typeof type === 'string' || typeof type === 'function' || type === REACT_FRAGMENT_TYPE || type === REACT_CONCURRENT_MODE_TYPE || type === REACT_PROFILER_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || typeof type === 'object' && type !== null && (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || type.$$typeof === REACT_FUNDAMENTAL_TYPE || type.$$typeof === REACT_RESPONDER_TYPE || type.$$typeof === REACT_SCOPE_TYPE || type.$$typeof === REACT_BLOCK_TYPE);
+      }
+
+      function typeOf(object) {
+        if (typeof object === 'object' && object !== null) {
+          var $$typeof = object.$$typeof;
+
+          switch ($$typeof) {
+            case REACT_ELEMENT_TYPE:
+              var type = object.type;
+
+              switch (type) {
+                case REACT_ASYNC_MODE_TYPE:
+                case REACT_CONCURRENT_MODE_TYPE:
+                case REACT_FRAGMENT_TYPE:
+                case REACT_PROFILER_TYPE:
+                case REACT_STRICT_MODE_TYPE:
+                case REACT_SUSPENSE_TYPE:
+                  return type;
+
+                default:
+                  var $$typeofType = type && type.$$typeof;
+
+                  switch ($$typeofType) {
+                    case REACT_CONTEXT_TYPE:
+                    case REACT_FORWARD_REF_TYPE:
+                    case REACT_LAZY_TYPE:
+                    case REACT_MEMO_TYPE:
+                    case REACT_PROVIDER_TYPE:
+                      return $$typeofType;
+
+                    default:
+                      return $$typeof;
+                  }
+
+              }
+
+            case REACT_PORTAL_TYPE:
+              return $$typeof;
+          }
+        }
+
+        return undefined;
+      }
+
+      var AsyncMode = REACT_ASYNC_MODE_TYPE;
+      var ConcurrentMode = REACT_CONCURRENT_MODE_TYPE;
+      var ContextConsumer = REACT_CONTEXT_TYPE;
+      var ContextProvider = REACT_PROVIDER_TYPE;
+      var Element = REACT_ELEMENT_TYPE;
+      var ForwardRef = REACT_FORWARD_REF_TYPE;
+      var Fragment = REACT_FRAGMENT_TYPE;
+      var Lazy = REACT_LAZY_TYPE;
+      var Memo = REACT_MEMO_TYPE;
+      var Portal = REACT_PORTAL_TYPE;
+      var Profiler = REACT_PROFILER_TYPE;
+      var StrictMode = REACT_STRICT_MODE_TYPE;
+      var Suspense = REACT_SUSPENSE_TYPE;
+      var hasWarnedAboutDeprecatedIsAsyncMode = false;
+
+      function isAsyncMode(object) {
+        {
+          if (!hasWarnedAboutDeprecatedIsAsyncMode) {
+            hasWarnedAboutDeprecatedIsAsyncMode = true;
+            console['warn']('The ReactIs.isAsyncMode() alias has been deprecated, ' + 'and will be removed in React 17+. Update your code to use ' + 'ReactIs.isConcurrentMode() instead. It has the exact same API.');
+          }
+        }
+        return isConcurrentMode(object) || typeOf(object) === REACT_ASYNC_MODE_TYPE;
+      }
+
+      function isConcurrentMode(object) {
+        return typeOf(object) === REACT_CONCURRENT_MODE_TYPE;
+      }
+
+      function isContextConsumer(object) {
+        return typeOf(object) === REACT_CONTEXT_TYPE;
+      }
+
+      function isContextProvider(object) {
+        return typeOf(object) === REACT_PROVIDER_TYPE;
+      }
+
+      function isElement(object) {
+        return typeof object === 'object' && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
+      }
+
+      function isForwardRef(object) {
+        return typeOf(object) === REACT_FORWARD_REF_TYPE;
+      }
+
+      function isFragment(object) {
+        return typeOf(object) === REACT_FRAGMENT_TYPE;
+      }
+
+      function isLazy(object) {
+        return typeOf(object) === REACT_LAZY_TYPE;
+      }
+
+      function isMemo(object) {
+        return typeOf(object) === REACT_MEMO_TYPE;
+      }
+
+      function isPortal(object) {
+        return typeOf(object) === REACT_PORTAL_TYPE;
+      }
+
+      function isProfiler(object) {
+        return typeOf(object) === REACT_PROFILER_TYPE;
+      }
+
+      function isStrictMode(object) {
+        return typeOf(object) === REACT_STRICT_MODE_TYPE;
+      }
+
+      function isSuspense(object) {
+        return typeOf(object) === REACT_SUSPENSE_TYPE;
+      }
+
+      exports.AsyncMode = AsyncMode;
+      exports.ConcurrentMode = ConcurrentMode;
+      exports.ContextConsumer = ContextConsumer;
+      exports.ContextProvider = ContextProvider;
+      exports.Element = Element;
+      exports.ForwardRef = ForwardRef;
+      exports.Fragment = Fragment;
+      exports.Lazy = Lazy;
+      exports.Memo = Memo;
+      exports.Portal = Portal;
+      exports.Profiler = Profiler;
+      exports.StrictMode = StrictMode;
+      exports.Suspense = Suspense;
+      exports.isAsyncMode = isAsyncMode;
+      exports.isConcurrentMode = isConcurrentMode;
+      exports.isContextConsumer = isContextConsumer;
+      exports.isContextProvider = isContextProvider;
+      exports.isElement = isElement;
+      exports.isForwardRef = isForwardRef;
+      exports.isFragment = isFragment;
+      exports.isLazy = isLazy;
+      exports.isMemo = isMemo;
+      exports.isPortal = isPortal;
+      exports.isProfiler = isProfiler;
+      exports.isStrictMode = isStrictMode;
+      exports.isSuspense = isSuspense;
+      exports.isValidElementType = isValidElementType;
+      exports.typeOf = typeOf;
+    })();
+  }
+},535,[],"node_modules/hoist-non-react-statics/node_modules/react-is/cjs/react-is.development.js");
 __r(57);
 __r(0);
 //# sourceMappingURL=index.map

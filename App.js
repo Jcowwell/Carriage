@@ -10,7 +10,6 @@ import React from 'react';
 import type {Node} from 'react';
 import {
   Dimensions,
-  TouchableHighlight,
   SafeAreaView,
   StatusBar,
   StyleSheet,
@@ -18,6 +17,8 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
 import {
   Colors,
@@ -54,108 +55,12 @@ const Section = ({children, title}): Node => {
   );
 };
 
-const state = {
-  homePageDisplay: 'block',
-  couponPageDisplay: 'none',
-  categoryPageDisplay: 'none',
-  searchPageDisplay: 'none',
-  settingPageDisplay: 'none',
-}
-
-const handleHomePagePress = () => this.setState(state => ({
-  homePageDisplay: 'block',
-  couponPageDisplay: 'none',
-  categoryPageDisplay: 'none',
-  searchPageDisplay: 'none',
-  settingPageDisplay: 'none',
-}));
-
-const handleCouponPagePress = () => this.setState(state => ({
-  homePageDisplay: 'none',
-  couponPageDisplay: 'block',
-  categoryPageDisplay: 'none',
-  searchPageDisplay: 'none',
-  settingPageDisplay: 'none',
-}));
-
-const handleCategoryPagePress = () => this.setState(state => ({
-  homePageDisplay: 'none',
-  couponPageDisplay: 'none',
-  categoryPageDisplay: 'block',
-  searchPageDisplay: 'none',
-  settingPageDisplay: 'none',
-}));
-
-const handleSearchPagePress = () => this.setState(state => ({
-  homePageDisplay: 'none',
-  couponPageDisplay: 'none',
-  categoryPageDisplay: 'none',
-  searchPageDisplay: 'block',
-  settingPageDisplay: 'none',
-}));
-
-const handleSettingPagePress = () => this.setState(state => ({
-  homePageDisplay: 'none',
-  couponPageDisplay: 'none',
-  categoryPageDisplay: 'none',
-  searchPageDisplay: 'none',
-  settingPageDisplay: 'block',
-}));
-
 const Topbar = (): Node => {
   return (
       <View style={styles.topbarContainer}>
       </View>
   );
 };
-
-const Tabbar = (): Node => {
-  return (
-    <View style={styles.tabbarContainer}>
-      <TouchableHighlight style={styles.tabButton}
-      onPress={handleHomePagePress}
-      >
-        {/* Home */}
-        <Text>
-          Home
-        </Text>
-      </TouchableHighlight>
-
-      <TouchableHighlight style={styles.tabButton}
-      >
-        {/* Coupons */}
-        <Text>
-          Coupons
-        </Text>
-      </TouchableHighlight>
-
-      <TouchableHighlight style={styles.tabButton}
-      >
-        {/* Categories */}
-        <Text>
-          Categories
-        </Text>
-      </TouchableHighlight>
-
-      <TouchableHighlight style={styles.tabButton}
-      >
-        {/* Search */}
-        <Text>
-          Search
-        </Text>
-      </TouchableHighlight>
-
-      <TouchableHighlight style={styles.tabButton}
-      >
-        {/* Settings */}
-        <Text>
-          Settings
-        </Text>
-      </TouchableHighlight>
-    </View>
-  );
-};
-
 
 const MyStatusBar = ({backgroundColor, ...props}) => (
   <View style={[styles.statusBar, { backgroundColor }]}>
@@ -172,51 +77,26 @@ const _handleButtonPress = () => {
   );
 };
 
+const Stack = createStackNavigator();
+
 const App: () => Node = () => {
-  const isDarkMode = useColorScheme() === 'light';
 
   const backgroundStyle = {
     backgroundColor: 'white',
   };
-
-
   return (
-    <View style={backgroundStyle}>
-      {/* Status Bar */}
-      <MyStatusBar backgroundColor="#32965D" barStyle="dark-content" />
-      {/* Topbar */}
-      <Topbar></Topbar>
-      {/* Home Page */}
-      <View style={{display: state.homePageDisplay}}>
-        <HomeScreen/>
+    <NavigationContainer>
+      <View style={backgroundStyle}>
+        {/* Status Bar */}
+        <MyStatusBar backgroundColor="#32965D" barStyle="dark-content" />
+        {/* Topbar */}
+        <Topbar></Topbar>
+        {/* Home Page */}
+        <Stack.Navigator>
+          <Stack.Screen name="Home" component={HomeScreen} />
+        </Stack.Navigator>
       </View>
-      {/* Coupon Page */}
-      <View style={{display: state.couponPageDisplay}}>
-        <View style={styles.contentContainer} >
-          <Text>Home</Text>
-        </View>
-      </View>
-      {/* Category Page */}
-      <View style={{display: state.categoryPageDisplay}}>
-        <View style={styles.contentContainer} >
-          <Text>Home</Text>
-        </View>
-      </View>
-      {/* Search Page */}
-      <View style={{display: state.searchPageDisplay}}>
-        <View style={styles.contentContainer} >
-          <Text>Home</Text>
-        </View>
-      </View>
-      {/* Settings Page */}
-      <View style={{display: state.settingPageDisplay}}>
-        <View style={styles.contentContainer} >
-          <Text>Home</Text>
-        </View>
-      </View>
-      {/* Tabbar */}
-      <Tabbar></Tabbar>
-    </View>
+    </NavigationContainer>
   );
 };
 
